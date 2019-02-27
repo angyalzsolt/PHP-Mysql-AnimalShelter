@@ -1,0 +1,48 @@
+<?php
+include "includes_admin/navbar.inc.php"; 
+include_once "includes_admin/dbh.inc.php";
+include_once "includes_admin/edit_supporter.inc.php";
+?>
+<link rel="stylesheet" type="text/css" href="../../css/users.css">
+<div class="break">
+	
+</div>
+<div class="container">
+	<div class='row'>
+	<?php
+if (isset($_SESSION['userUid']))
+      {
+$results = mysqli_query($conn, "SELECT * FROM how_support");
+while ($row = mysqli_fetch_array($results)) { 
+	 ?>
+		<hr>
+		<div class="col-md-10 offset-md-2">
+			<?php 
+        if (isset($_GET['success'])) {
+  echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+  <strong>Success!</strong>
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button>
+</div>";
+      } ?>
+		<form action="includes_admin/edit_supporter.inc.php" method="POST">
+		<div class="form-group">
+			<label><b>Title: </b></label>
+			<input class="form-control " type="text" name="title" value="<?php echo htmlspecialchars($row["support_title"]); ?>">
+		</div>
+		<div class="form-group">
+			<label><b>Text: </b></label>
+			<textarea class="form-control" type="text" name="text"  rows="18"><?php echo htmlspecialchars($row["support_text"]); ?></textarea>
+		</div>          
+		<button class="btn btn-warning" type="submit" name="edit_support" value="<?php echo $row["how_support_id"]; ?>" >Edit</button>
+		</form><br>
+		</div>		
+		<?php
+	}
+	?>
+		</div>
+	</div>
+<?php } 
+include "includes_admin/footer.inc.php"; 
+?>

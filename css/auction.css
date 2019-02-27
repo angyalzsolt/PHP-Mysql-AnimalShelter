@@ -1,0 +1,15 @@
+.break{ 
+	height: 150px; 
+}
+.card-body {
+	min-height: 300px!important;
+}
+
+.card-img-top {
+	width: 100%;
+    height: 13vw;
+    object-fit: cover;
+}
+.warningg {
+	background-color:#F9812A!important;
+}

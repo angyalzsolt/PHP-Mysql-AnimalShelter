@@ -1,0 +1,66 @@
+.backg2 {
+  background-image: url(../img/alexis-chloe-534920-unsplashh.jpg);
+  background-color: #17234E;
+    margin-bottom: 0;`enter code here`
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 300px;
+}
+
+.backg3 {
+  background-image: url(../img/photo-1490481920145-fc78891bbb99.jpg);
+  background-color: #17234E;
+    margin-bottom: 0;`enter code here`
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 300px;
+}
+.break {
+	height: 150px;
+}
+
+.row2 img {
+	width: 220px;
+	margin-left: 30px;
+	float: right;
+	max-width: 100%;
+	height: auto;
+	border: 15px solid $white;
+	border-radius: 10px;
+	box-shadow: 5px 5px 20px grey;
+	}
+
+.row1 img {
+	width: 220px;
+	margin-right: 30px;
+	float: left;
+	max-width: 100%;
+	height: auto;
+	border: 15px solid $white;
+	border-radius: 10px;
+	box-shadow: 5px 5px 20px grey;
+}
+
+p {
+	text-align: justify;
+}
+@media screen and (max-width: 600px) {
+  .row2 img {
+    width: 100%;
+  }
+}
+h2 {
+	  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+}
+@media screen and (max-width: 600px) {
+  .row1 img {
+    width: 100%;
+  }
+}

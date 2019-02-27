@@ -1,0 +1,25 @@
+ 	.small_parts img{
+  width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.break {
+  height: 150px;
+}
+.part_divs {
+  margin: 0!important;
+}
+
+.small_parts:hover .imag {
+  opacity: 0.3;
+}
+
+.small_parts:hover .buttons_div {
+  display: block;
+  opacity: 1;
+}
+ .gallery-image {
+  width: 100%;
+    height: 200px;
+    object-fit: cover;
+ }

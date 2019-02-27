@@ -1,0 +1,29 @@
+
+.break {
+	height: 100px;
+}
+.card_body{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+.inputform{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	margin-top: 100px;
+	padding-top: 50px;
+	border: 1px black solid;
+	width: 700px;
+	height: auto;
+	padding-bottom: 50px;
+	margin-bottom: 50px;
+}
+#textarea_users{
+	width: 400px;
+	height: 220px;
+}
+.users_content{
+	height: 500px;
+	overflow-y: scroll;
+}
