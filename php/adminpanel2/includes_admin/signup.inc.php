@@ -56,9 +56,9 @@ else{
 		exit();
 		}
 		else {
-			$sql = "INSERT INTO users (users_name, users_email, users_pass) VALUES (?, ?, ?)";
+			$sql1 = "INSERT INTO users (users_name, users_email, users_pass) VALUES (?, ?, ?)";
 			$stmt = mysqli_stmt_init($conn); //initializing the statement again for 3 placeholder values
-			if(!mysqli_stmt_prepare($stmt,$sql)){
+			if(!mysqli_stmt_prepare($stmt,$sql1)){
 				header("Location: ../register.php?error=sqlerror");
 				exit();
 			} 

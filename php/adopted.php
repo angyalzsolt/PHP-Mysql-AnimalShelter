@@ -89,8 +89,12 @@ include("includes/output_adopted.inc.php");
     <div id="filtering" class="col-10 offset-1">
       <hr>
       <h4>Filter by name</h4>
-       <a href="adopted.php?char=A" class="mb-1 btn btn-warning">A</a>
-       <a href="adopted.php?char=B" class="mb-1 btn btn-warning">B</a>
+      <?php 
+      for($i=ord('A'); $i<ord('Z'); $i++){
+      ?>
+       <a href="adopted.php?char=<?php echo chr($i) ?>" class="mb-1 btn btn-warning"><?php echo chr($i) ?></a>
+     <?php }; ?>
+      <!--  <a href="adopted.php?char=B" class="mb-1 btn btn-warning">B</a>
        <a href="adopted.php?char=C" class="mb-1 btn btn-warning">C</a>
        <a href="adopted.php?char=D" class="mb-1 btn btn-warning">D</a>
        <a href="adopted.php?char=E" class="mb-1 btn btn-warning">E</a>
@@ -114,14 +118,18 @@ include("includes/output_adopted.inc.php");
        <a href="adopted.php?char=W" class="mb-1 btn btn-warning">W</a>
        <a href="adopted.php?char=X" class="mb-1 btn btn-warning">X</a>
        <a href="adopted.php?char=Y" class="mb-1 btn btn-warning">Y</a>
-       <a href="adopted.php?char=Z" class="mb-1 btn btn-warning">Z</a>
+       <a href="adopted.php?char=Z" class="mb-1 btn btn-warning">Z</a> -->
        <h4 class="mt-4">Filter by date of born</h4>
        <form action="" method="get" >
          <div class="form-group">
           <label >Select Month</label>
           <select name="fmonth" class="form-control" >
-            <option value="01">1</option>
-            <option value="02">2</option>
+            <?php 
+              for($i=1; $i<13; $i++){
+             ?>
+            <option value="<?php echo $i<10? '0'.$i : $i ?>"><?php echo $i ?></option>
+            <?php }; ?>
+            <!-- <option value="02">2</option>
             <option value="03">3</option>
             <option value="04">4</option>
             <option value="05">5</option>
@@ -131,14 +139,18 @@ include("includes/output_adopted.inc.php");
             <option value="09">9</option>
             <option value="10">10</option>
             <option value="11">11</option>
-            <option value="12">12</option>
+            <option value="12">12</option> -->
           </select>
         </div>
         <div class="form-group">
           <label >Select Year</label>
           <select name="fyear" class="form-control" >
-            <option value="2000">2000</option>
-            <option value="2001">2001</option>
+            <?php 
+              for($i=2000; $i<2020; $i++){
+             ?>
+            <option value="<?php echo $i ?>"><?php echo $i ?></option>
+          <?php }; ?>
+<!--             <option value="2001">2001</option>
             <option value="2002">2002</option>
             <option value="2003">2003</option>
             <option value="2004">2004</option>
@@ -156,7 +168,7 @@ include("includes/output_adopted.inc.php");
             <option value="2016">2016</option>
             <option value="2017">2017</option>
             <option value="2018">2018</option>
-            <option value="2019">2019</option>
+            <option value="2019">2019</option> -->
           </select>
         </div>
         <input class="btn btn-warning"" type="submit" value="Filter" name="filter_date" />

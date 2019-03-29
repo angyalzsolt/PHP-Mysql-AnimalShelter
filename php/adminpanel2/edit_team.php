@@ -24,7 +24,7 @@ $results = mysqli_query($conn, "SELECT * FROM team");
 		<?php 
         if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Success!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
@@ -36,9 +36,9 @@ $results = mysqli_query($conn, "SELECT * FROM team");
 		<table class="table bordered">
 	<thead>
 		<tr>
-			<th>Name</th>
-			<th>Position</th>
-			<th>Description</th>
+			<th><?php echo $languages[$x]["up_name"] ?></th>
+			<th><?php echo $languages[$x]["team_pos"] ?></th>
+			<th><?php echo $languages[$x]["team_desc"] ?></th>
 		</tr>
 	</thead>
 	
@@ -48,11 +48,11 @@ $results = mysqli_query($conn, "SELECT * FROM team");
 			<td><?php echo $row['position']; ?></td>
 			<td><?php echo $row['description']; ?></td>
 			<td>
-				<a href="edit_team.php?edit=<?php echo $row['team_id'] ?>" class="btn btn-info">Edit</a>
+				<a href="edit_team.php?edit=<?php echo $row['team_id'] ?>" class="btn btn-info"><?php echo $languages[$x]["up_edit_btn"] ?></a>
 			</td>
 			<td>
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $row['team_id'] ?>">
-        Delete
+        <?php echo $languages[$x]["up_del_btn"] ?>
       </button>
             </td>
             <!-- Modal -->
@@ -88,18 +88,18 @@ $results = mysqli_query($conn, "SELECT * FROM team");
 			<form method="post" action="includes_admin/edit_team.inc.php" >
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
 				<div class="input-group form-group">
-					<label class="col">Name: </label>
+					<label class="col"><?php echo $languages[$x]["up_name"] ?>: </label>
 					<input class="form-control" type="text" name="name" value="<?php echo htmlspecialchars($name); ?>">
 				</div>
 				<div class="input-group form-group">
-					<label class="col">position: </label>
+					<label class="col"><?php echo $languages[$x]["team_pos"] ?>: </label>
 					<input class="form-control" type="text" name="position" value="<?php echo htmlspecialchars($position); ?>">
 				</div>
 				<div class="input-group form-group">
-					<label class="col">description: </label>
+					<label class="col"><?php echo $languages[$x]["team_desc"] ?>: </label>
 					<textarea id="textarea_users" class="form-control" type="text" name="description"><?php echo htmlspecialchars($description); ?></textarea>
 				</div>
-				<button class="btn btn-center" type="submit" name="update">update</button>
+				<button class="btn btn-center" type="submit" name="update"><?php echo $languages[$x]["up_edit_btn"] ?></button>
 			</form>
 		</div>
 </div>

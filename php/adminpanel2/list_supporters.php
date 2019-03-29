@@ -22,17 +22,17 @@
     <table class="table bordered">
   <thead>
     <tr>
-      <th>City:</th>
-      <th>Street:</th>
-      <th>Zip:</th>
+      <th><?php echo $languages[$x]["city"] ?>:</th>
+      <th><?php echo $languages[$x]["street"] ?>:</th>
+      <th><?php echo $languages[$x]["zip"] ?>:</th>
       <th>Tel:</th>
       <th>Email:</th>
-      <th>Name:</th>
+      <th><?php echo $languages[$x]["up_name"] ?>:</th>
       <th>Verify:</th>
-      <th>Req Date:</th>
-      <th>Supported Pet:</th>
-      <th>Pet Evidence ID:</th>
-      <th>Delete</th>
+      <th><?php echo $languages[$x]["req_date"] ?>:</th>
+      <th><?php echo $languages[$x]["suppet"] ?>:</th>
+      <th><?php echo $languages[$x]["petev"] ?>:</th>
+      <th><?php echo $languages[$x]["up_del_btn"] ?></th>
 
     </tr>
   </thead>

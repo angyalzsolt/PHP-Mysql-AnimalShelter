@@ -1,9 +1,9 @@
 <?php  
 include_once "dbh.inc.php";
 if (isset($_SESSION['message2'])){?>
-    <div class='alert alert-success mt-6' role='alert'>
+<!--     <div class='alert alert-success mt-6' role='alert'>
          Verificated successfully.
-    </div>";
+    </div>"; -->
   <?php 
   unset($_SESSION['message2']);
 } 

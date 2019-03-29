@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
 				$fileDestination = "../../../image_upload/" . $imageFullName;
 				//var_dump($fileDestination);
 				if(empty($imageFkId)) {
-					header("Location: admin_landing_page.php?upload=empty");
+					header("Location: admin_landing_page.php2?upload=empty");
 					exit();
 				} else {
 					$sql = "SELECT * FROM sponsors_image;";
@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
 
 						move_uploaded_file($fileTempName, $fileDestination);
 
-						header("Location: ../admin_landing_page.php?success");
+						header("Location: ../admin_landing_page2.php?success");
 					}
 					}
 				}

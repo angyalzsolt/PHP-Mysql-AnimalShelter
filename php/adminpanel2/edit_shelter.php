@@ -18,13 +18,13 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
       <?php 
         if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Success!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
 </div>";
       } ?>
-      <h1>Delete Shelter Images</h1>
+      <h1><?php echo $languages[$x]["img_del_title"] ?></h1>
       <hr>
     </div>
     <div class="col-md-10 offset-md-2">
@@ -36,7 +36,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
           <div class="small_parts">
             <img class="imag" src="../../image_upload/<?php echo $row["url"]; ?>" alt="">
             <div class="buttons_div">
-              <a href="includes_admin/edit_shelter.inc.php?del=<?php echo $row['place_id'] ?>" class="btn btn-danger">Delete</a>
+              <a href="includes_admin/edit_shelter.inc.php?del=<?php echo $row['place_id'] ?>" class="btn btn-danger"><?php echo $languages[$x]["up_del_btn"] ?></a>
             </div>
           </div>
         </div>

@@ -27,7 +27,6 @@ if(isset($_GET['ageselect'])){
   <div class="row">
     <div class="col-10 offset-1">
       <h1>Dogs</h1> 
-
       <hr>
     </div>
 

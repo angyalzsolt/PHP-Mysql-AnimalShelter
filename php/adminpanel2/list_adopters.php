@@ -20,18 +20,18 @@ if (isset($_SESSION['userUid']))
     <table class="table bordered">
   <thead>
     <tr>
-      <th>Name:</th>
-      <th>Kind:</th>
-      <th>Address:</th>
+      <th><?php echo $languages[$x]["up_name"] ?>:</th>
+      <th><?php echo $languages[$x]["kind"] ?>:</th>
+      <th><?php echo $languages[$x]["address"] ?>:</th>
       <th>Email:</th>
-      <th>Other pets:</th>
-      <th>Kind of pets:</th>
+      <th><?php echo $languages[$x]["other_pets"] ?>:</th>
+      <th><?php echo $languages[$x]["kind_pets"] ?>:</th>
       <th>Telephone Number 1:</th>
       <th>Telephone Number 2:</th>
-      <th>Date:</th>
-      <th>Supported Pet:</th>
-      <th>Pet Evidence ID:</th>
-      <th>Delete</th>
+      <th><?php echo $languages[$x]["rep_date"] ?>:</th>
+      <th><?php echo $languages[$x]["pet_id"] ?>:</th>
+      <th><?php echo $languages[$x]["petev"] ?>:</th>
+      <th><?php echo $languages[$x]["up_del_btn"] ?></th>
     </tr>
   </thead>
   
@@ -51,7 +51,7 @@ if (isset($_SESSION['userUid']))
       <td><?php echo isset($row['dog_name']) ? "Evidence ID: ".$row['dog_id_old'] :  "Evidence ID: ".$row['cat_id_old']?></td>
       <?php echo 
       '<td>
-        <a href="list_adopters.php?del='.$row['adoption_id'].'" class="btn btn-danger">Delete</a>
+        <a href="list_adopters.php?del='.$row['adoption_id'].'" class="btn btn-danger">'. $languages[$x]["up_del_btn"].'</a>
       </td>'
       ?>
       </tr>

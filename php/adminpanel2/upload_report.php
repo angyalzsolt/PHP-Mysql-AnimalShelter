@@ -11,30 +11,30 @@ if (isset($_SESSION['userUid']))
             <?php  {
         if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Uploaded successfully!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
 </div>";
       } ?>
-         <center><h2>Report Upload</h2></center>
+         <center><h2><?php echo $languages[$x]["rep_title"] ?></h2></center>
        <form action="includes_admin/upload_reports.inc.php" method="POST" class="needs-validation" novalidate>
           <div class="form-group">
-            <label for="error1">Report Title</label>
+            <label for="error1"><?php echo $languages[$x]["rep_name"] ?></label>
             <input type="text" id="error1" class="form-control" name="title" required>
             <div class="invalid-feedback">
               Please provide a value.
             </div>
           </div>
           <div class="form-group">
-            <label for="error2">Description</label>
+            <label for="error2"><?php echo $languages[$x]["team_desc"] ?></label>
             <input type="text" id="error2" class="form-control" name="desc" required>
             <div class="invalid-feedback">
               Please provide a value.
             </div>
           </div>
           <div class="form-group">
-            <label for="error3">Date</label>
+            <label for="error3"><?php echo $languages[$x]["rep_date"] ?></label>
             <input type="date" id="error3" class="form-control" name="reports_date"
             required>
             <div class="invalid-feedback">
@@ -42,13 +42,13 @@ if (isset($_SESSION['userUid']))
             </div>
           </div>
           <div class="form-group">
-            <label for="error4">Keywords (for search)</label>
+            <label for="error4"><?php echo $languages[$x]["rep_keywords"] ?></label>
             <input type="text" id="error4" class="form-control" name="keywords" required>
             <div class="invalid-feedback">
               Please provide a value.
             </div>
           </div>
-          <input class="btn btn-warning"" type="submit" value="Next" name="upload_report" />
+          <input class="btn btn-warning"" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_report" />
         </form>
   </div>
 </div>

@@ -23,7 +23,7 @@ $results = mysqli_query($conn, "SELECT * FROM users"); ?>
 				<?php 
 				        if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Uploaded successfully!</strong>
+  <strong>".$languages[$x]["up_success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
@@ -35,7 +35,7 @@ $results = mysqli_query($conn, "SELECT * FROM users"); ?>
 		<table class="table bordered">
 	<thead>
 		<tr>
-			<th>Username</th>
+			<th><?php echo $languages[$x]["admin_name"] ?></th>
 			<th>E-Mail</th>
 			<th>Admin (1 = yes // 0 = no)</th>
 		</tr>
@@ -48,10 +48,10 @@ $results = mysqli_query($conn, "SELECT * FROM users"); ?>
 			<td><?php echo $row['users_role']; ?></td>
 			<?php 
 			echo '<td>
-				<a href="edit_users.php?edit='. $row['users_id']. '" class="btn btn-info" >Edit</a>
+				<a href="edit_users.php?edit='. $row['users_id']. '" class="btn btn-info" >'.$languages[$x]["up_edit_btn"].'</a>
 			</td>
 			<td>
-				<a href="edit_users.php?del='.$row['users_id'].'" class="btn btn-danger">Delete</a>
+				<a href="edit_users.php?del='.$row['users_id'].'" class="btn btn-danger">'.$languages[$x]["up_del_btn"].'</a>
 			</td>';
 			?>
 			</tr>
@@ -63,7 +63,7 @@ $results = mysqli_query($conn, "SELECT * FROM users"); ?>
 			<form method="post" action="includes_admin/edit_users.inc.php" >
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
 				<div class="input-group form-group">
-					<label class="col">Username: </label>
+					<label class="col"><?php echo $languages[$x]["admin_name"] ?>: </label>
 					<input class="form-control" type="text" name="name" value="<?php echo $name; ?>">
 				</div>
 				<div class="input-group form-group">
@@ -74,7 +74,7 @@ $results = mysqli_query($conn, "SELECT * FROM users"); ?>
 					<label class="col">Admin: </label>
 					<input class="form-control" type="text" name="admin" value="<?php echo $admin; ?>">
 				</div>
-				<button class="btn btn-center" type="submit" name="update"  >update</button>
+				<button class="btn btn-center" type="submit" name="update"  ><?php echo $languages[$x]["up_update_btn"] ?></button>
 			</form>
 		</div>
 	</div>

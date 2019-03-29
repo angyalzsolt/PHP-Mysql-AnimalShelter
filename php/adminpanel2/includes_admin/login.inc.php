@@ -31,6 +31,7 @@ if (isset($_POST['login-submit'])) {
 					session_start();
 					$_SESSION['userId'] = $row['users_id'];
 					$_SESSION['userUid'] = $row['users_name'];
+					$_SESSION['lang'] = 'slo';
 					header("Location: ../admin_landing_page2.php?login=success");
 					exit();
 				}

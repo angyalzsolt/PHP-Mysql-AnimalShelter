@@ -14,16 +14,16 @@ require_once("includes_admin/dbh.inc.php");
 </div>
 		<hr class="mb-4" >
 		<div>
-		<h2 class="mb-4">2. STEP: Upload Other Pictures</h2>
+		<h2 class="mb-4">2. STEP: <?php echo $languages[$x]["up_img4"] ?></h2>
 		<form  method="post" action="includes_admin/image_upload_cat2.inc.php" enctype="multipart/form-data" class="mb-4">
 			<input type="file" name="file" class="mb-4" onchange="readURL(this);" required="true">
 			<input type="file" name="file1" class="mb-4" onchange="readURL(this);">
 			<input type="file" name="file2" class="mb-4" onchange="readURL(this);">
 			<input type="file" name="file3" class="mb-4" onchange="readURL(this);">
 			<input type="file" name="file4" class="mb-4" onchange="readURL(this);">
-			<p><button type="submit" class="btn btn-primary" name="submitOther">UPLOAD</button></p>
+			<p><button type="submit" class="btn btn-primary" name="submitOther"><?php echo $languages[$x]["up_load_btn"] ?></button></p>
 		</form>	
-		<a href="upload_cat.php" class=" mt-4 btn btn-primary">SKIP IMAGE UPLOAD</a>
+		<a href="upload_cat.php" class=" mt-4 btn btn-primary"><?php echo $languages[$x]["up_skip_btn"] ?></a>
 	</div>
 	</div>
 	<div class="col-md-5"><img id="review" src="#" alt=""></div>

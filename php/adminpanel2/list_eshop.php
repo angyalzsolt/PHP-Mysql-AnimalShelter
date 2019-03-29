@@ -22,19 +22,19 @@ $results = mysqli_query($conn, "SELECT * FROM eshop"); ?>
   <div class="col-md-10 offset-md-2 users_content">
     <div class="card card_adminpanel">
     <div class="card-body">
-    <h1 class="mb-4"> Products</h1>
+    <h1 class="mb-4"><?php echo $languages[$x]["products"] ?></h1>
 
     <table class="table bordered">
   <thead>
     <tr>
       <th>ID:</th>
-      <th>Product</th>
-      <th>Price:</th>
-      <th>Condition:</th>
-      <th>Quantity:</th>
-      <th>Description:</th>
+      <th><?php echo $languages[$x]["products"] ?></th>
+      <th><?php echo $languages[$x]["price"] ?>:</th>
+      <th><?php echo $languages[$x]["condition"] ?>:</th>
+      <th><?php echo $languages[$x]["quantity"] ?>:</th>
+      <th><?php echo $languages[$x]["up_desc"] ?>:</th>
       <th>Type:</th>
-      <th>Action</th>
+      <th><?php echo $languages[$x]["rep_action"] ?></th>
     </tr>
   </thead>
   
@@ -48,7 +48,7 @@ $results = mysqli_query($conn, "SELECT * FROM eshop"); ?>
       <td><?php echo $row['description']; ?></td>
       <td><?php echo $row['product_type']; ?></td>
       <td>
-        <a href="list_eshop.php?del=<?php echo $row['eshop_id']; ?>" class="btn btn-danger">Delete/Sold</a>
+        <a href="list_eshop.php?del=<?php echo $row['eshop_id']; ?>" class="btn btn-danger"><?php echo $languages[$x]["del/sold"] ?></a>
       </td>
       </tr>
   <?php } ?>
@@ -62,21 +62,21 @@ $results = mysqli_query($conn, "SELECT * FROM eshop_customer INNER JOIN eshop ON
   <div class="col-md-10 offset-md-2  users_content">
     <div class="card card_adminpanel">
     <div class="card-body">
-      <h1 class="mb-4">Waiting Customers</h1>
+      <h1 class="mb-4"><?php echo $languages[$x]["w_c"] ?></h1>
     <table class="table bordered">
   <thead>
     <tr>
       <th>ID:</th>
-      <th>Name</th>
+      <th><?php echo $languages[$x]["up_name"] ?></th>
       <th>E-mail:</th>
-      <th>Address:</th>
+      <th><?php echo $languages[$x]["address"] ?>:</th>
       <th>Tel:</th>
-      <th>Comment:</th>
-      <th>Item ID:</th>
-      <th>Product:</th>
-      <th>Price:</th>
+      <th><?php echo $languages[$x]["comment"] ?>:</th>
+      <th><?php echo $languages[$x]["pr_id"] ?>:</th>
+      <th><?php echo $languages[$x]["product"] ?>:</th>
+      <th><?php echo $languages[$x]["price"] ?>:</th>
       <th>Status:</th>
-      <th>Action</th>
+      <th><?php echo $languages[$x]["rep_action"] ?></th>
     </tr>
   </thead>
   
@@ -93,7 +93,7 @@ $results = mysqli_query($conn, "SELECT * FROM eshop_customer INNER JOIN eshop ON
       <td><?php echo $row['price']; ?></td>
       <td><?php echo $row['status']; ?></td>
       <td>
-        <a href="list_eshop.php?remove=<?php echo $row['customer_id']; ?>" class="btn btn-warning">Contacted</a>
+        <a href="list_eshop.php?remove=<?php echo $row['customer_id']; ?>" class="btn btn-warning"><?php echo $languages[$x]["contacted"] ?></a>
       </td>
       </tr>
   <?php } ?>
@@ -107,21 +107,21 @@ $results = mysqli_query($conn, "SELECT * FROM eshop_customer INNER JOIN eshop ON
   <div class="col-md-10 offset-md-2  users_content">
     <div class="card card_adminpanel">
     <div class="card-body">
-      <h1 class="mb-4">Handled Customers</h1>
+      <h1 class="mb-4"><?php echo $languages[$x]["hand_cust"] ?></h1>
     <table class="table bordered">
   <thead>
     <tr>
       <th>ID:</th>
-      <th>Name</th>
+      <th><?php echo $languages[$x]["up_name"] ?></th>
       <th>E-mail:</th>
-      <th>Address:</th>
+      <th><?php echo $languages[$x]["address"] ?>:</th>
       <th>Tel:</th>
-      <th>Comment:</th>
-      <th>Item ID:</th>
-      <th>Product:</th>
-      <th>Price:</th>
+      <th><?php echo $languages[$x]["comment"] ?>:</th>
+      <th><?php echo $languages[$x]["pr_id"] ?>:</th>
+      <th><?php echo $languages[$x]["product"] ?>:</th>
+      <th><?php echo $languages[$x]["price"] ?>:</th>
       <th>Status:</th>
-      <th>Action</th>
+      <th><?php echo $languages[$x]["rep_action"] ?></th>
     </tr>
   </thead>
   
@@ -138,7 +138,7 @@ $results = mysqli_query($conn, "SELECT * FROM eshop_customer INNER JOIN eshop ON
       <td><?php echo $row['price']; ?></td>
       <td><?php echo $row['status']; ?></td>
       <td>
-        <a href="list_eshop.php?delete=<?php echo $row['customer_id']; ?>" class="btn btn-danger">Delete/Finish</a>
+        <a href="list_eshop.php?delete=<?php echo $row['customer_id']; ?>" class="btn btn-danger"><?php echo $languages[$x]["del/finish"] ?></a>
       </td>
       </tr>
   <?php } ?>

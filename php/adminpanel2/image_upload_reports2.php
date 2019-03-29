@@ -18,15 +18,15 @@ if (isset($_SESSION['userUid']))
 		</div>
 		<hr class="mb-4" >
 		<div>
-		<h2 class="mb-4">2. STEP: Upload Images</h2>
+		<h2 class="mb-4">2. <?php echo $languages[$x]["up_img4"] ?></h2>
 		
 		<form  method="post" action="includes_admin/image_upload_reports2.inc.php" enctype="multipart/form-data" class="mb-4">
 			
 				<input type="file" name="file" class="mb-4" onchange="readURL(this);printForm()" required="true">
 				<input type="number" name="counter" id="counter" hidden>
 				<div id="target"></div>
-				<p><button type="submit" class="btn btn-primary" name="submitOther">UPLOAD</button></p>
-				<a href="upload_reports.php?success" class=" mt-4 btn btn-primary">SKIP IMAGE UPLOAD</a>
+				<p><button type="submit" class="btn btn-primary" name="submitOther"><?php echo $languages[$x]["up_load_btn"] ?></button></p>
+				<a href="upload_report.php?success" class=" mt-4 btn btn-primary"><?php echo $languages[$x]["up_skip_btn"] ?></a>
 		</form>	
 	</div>
 	</div>

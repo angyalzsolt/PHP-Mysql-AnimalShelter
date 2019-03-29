@@ -4,6 +4,11 @@ include("includes/dbh.inc.php");
 include("includes/output_in_memoriam.inc.php");
 ?>
 <link rel="stylesheet" type="text/css" href="../css/dogs_cats.css">
+<style>
+  #filtering {
+    display: none;
+  }
+</style>
 <div class="break">
 </div>
 <div class="container">
@@ -69,7 +74,49 @@ include("includes/output_in_memoriam.inc.php");
 			 		</div> 
 			</div><!--inside row ends-->
 		</div><!--col-10 ends-->
-	</div>
+     <div class="col-10 offset-2 m-4 pl-4">
+        <button type="button" id="display" class="btn btn-success" >Filter</button>
+        <script>
+            $("#display").click(function () {
+                $("#filtering").css("display", "block");
+            });
+        </script>
+        
+</div>
+    <div id="filtering" class="col-10 offset-1">
+      <hr>
+      <h4>Filter by name</h4>
+      <?php 
+      for($i=ord('A'); $i<ord('Z'); $i++){
+      ?>
+       <a href="in_memoriam.php?char=<?php echo chr($i) ?>" class="mb-1 btn btn-warning"><?php echo chr($i) ?></a>
+     <?php }; ?>
+       <h4 class="mt-4">Filter by date of born</h4>
+       <form action="" method="get" >
+         <div class="form-group">
+          <label >Select Month</label>
+          <select name="fmonth" class="form-control" >
+            <?php 
+              for($i=1; $i<13; $i++){
+             ?>
+            <option value="<?php echo $i<10? '0'.$i : $i ?>"><?php echo $i ?></option>
+            <?php }; ?>
+          </select>
+        </div>
+        <div class="form-group">
+          <label >Select Year</label>
+          <select name="fyear" class="form-control" >
+            <?php 
+              for($i=2000; $i<2020; $i++){
+             ?>
+            <option value="<?php echo $i ?>"><?php echo $i ?></option>
+          <?php }; ?>
+          </select>
+        </div>
+        <input class="btn btn-warning"" type="submit" value="Filter" name="filter_date" />
+       </form><br> 
+       <a href="in_memoriam.php?nochar" class="mb-1 btn btn-warning">No filter</a>
+    </div>
 <div id="mypicture" class="picture">
       <span id="close" class="close" style="color: white;">&times;</span>
       <img class="picture-content" src="#">

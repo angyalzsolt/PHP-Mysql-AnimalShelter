@@ -6,8 +6,8 @@ if (isset($_SESSION['userUid']))
             {   
 
 if(isset($_GET['success'])){
-  echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-          <strong>Success!</strong>
+  echo "<div class='alert alert-success alert-dismissible fade show col-md-7 offset-md-2' role='alert'>
+          <strong>".$languages[$x]["success"]."!</strong>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
             <span aria-hidden='true'>&times;</span>
           </button>
@@ -17,7 +17,7 @@ if(isset($_GET['success'])){
  <div class="container-fluid ">
   <div class="row">
     <div class="col-md-3 offset-md-2">
-      <h1 class="m-4">News</h1>
+      <h1 class="m-4"><?php echo $languages[$x]["news"]; ?></h1>
       <?php
 
        $sql2 = "SELECT * FROM supporter
@@ -35,28 +35,28 @@ if(isset($_GET['success'])){
 
        if(!empty($rows)){ ?>
       <div class="mt-4">
-        <h4>Waiting for verification</h4>
+        <h4><?php echo $languages[$x]["request4"]; ?></h4>
         <?php foreach ($rows as $row) {
          ?>
-        <p><?php  echo "<u>Adoption request from:</u> ".$row['name']; ?><a href='list_adopters.php'> Check out</a></p>  <?php } ?>
+        <p><?php  echo "<u>".$languages[$x]["request1"]."</u>".$row['name']; ?><a href='list_adopters.php'> Check out</a></p>  <?php } ?>
       </div>
       <?php } ;
 
        if(!empty($rows2)){ ?>
       <div class="mt-4">
-        <h4>Waiting for verification</h4>
+        <h4><?php echo $languages[$x]["request4"]; ?></h4>
         <?php foreach ($rows2 as $row2) {
          ?>
-        <p><?php  echo "<u>Support request from:</u> ".$row2['name']; ?><a href='list_supporters.php'> Check out</a></p>  <?php } ?>
+        <p><?php  echo "<u>".$languages[$x]["request2"]."</u>".$row2['name']; ?><a href='list_supporters.php'> Check out</a></p>  <?php } ?>
       </div>
       <?php } ;
 
        if(!empty($rows3)){ ?>
       <div class="mt-4">
-        <h4>Waiting for handle</h4>
+        <h4><?php echo $languages[$x]["request5"]; ?></h4>
         <?php foreach ($rows3 as $row3) {
          ?>
-        <p><?php  echo "<u>Buying request from:</u> ".$row3['full_name']; ?><a href='list_eshop.php'> Check out</a></p>  <?php } ?>
+        <p><?php  echo "<u>".$languages[$x]["request3"]."</u>".$row3['full_name']; ?><a href='list_eshop.php'> Check out</a></p>  <?php } ?>
       </div>
       <?php } ;?>
       

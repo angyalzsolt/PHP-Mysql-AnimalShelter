@@ -14,7 +14,7 @@ if (isset($_SESSION['userUid']))
 	<div class="col-md-10 offset-md-2 ">
 		<?php         if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Uploaded successfully!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
@@ -24,22 +24,21 @@ if (isset($_SESSION['userUid']))
 		</div>
 		<hr class="mb-4" >
 		<div>
-		<h2 class="mb-4">Upload PDF file</h2>
+		<h2 class="mb-4"><?php echo $languages[$x]["anrep_title"] ?></h2>
 		
 		<form  method="post" action="includes_admin/image_upload_report.inc.php" enctype="multipart/form-data" class="mb-4">
 				<div class="form-group">
-		            <label >Name of file: </label>
+		            <label ><?php echo $languages[$x]["anrep_name"] ?>: </label>
 		            <input type="text" class="form-control" name="reportname">
 		        </div>
 		        <div class="form-group">
-		            <label >Year: </label>
+		            <label ><?php echo $languages[$x]["anrep_year"] ?>: </label>
 		            <input type="number" class="form-control" name="report_date">
 		        </div>
 				<input type="file" name="file" class="mb-4" onchange="readURL(this);printForm()" required="true">
 				<input type="number" name="counter" id="counter" hidden>
 				<div id="target"></div>
-				<p><button type="submit" class="btn btn-primary" name="submitOther">UPLOAD</button></p>
-			
+				<p><button type="submit" class="btn btn-primary" name="submitOther"><?php echo $languages[$x]["up_load_btn"] ?></button></p>
 		</form>	
 	</div>
 	</div>

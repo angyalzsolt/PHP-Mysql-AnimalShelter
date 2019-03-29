@@ -23,7 +23,7 @@ $results = mysqli_query($conn, "SELECT * FROM sponsors");
 		<?php 
         if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Success!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
@@ -35,9 +35,9 @@ $results = mysqli_query($conn, "SELECT * FROM sponsors");
 		<table class="table bordered">
 	<thead>
 		<tr>
-			<th>Address</th>
+			<th><?php echo $languages[$x]["address"] ?></th>
 			<th>URL</th>
-			<th>Name</th>
+			<th><?php echo $languages[$x]["up_name"] ?></th>
 		</tr>
 	</thead>
 	
@@ -47,11 +47,11 @@ $results = mysqli_query($conn, "SELECT * FROM sponsors");
 			<td><?php echo $row['sponsors_email']; ?></td>
 			<td><?php echo $row['sponsors_name']; ?></td>
 			<td>
-				<a href="edit_sponsors.php?edit=<?php echo $row['sponsors_id'] ?>" class="btn btn-info" >Edit</a>
+				<a href="edit_sponsors.php?edit=<?php echo $row['sponsors_id'] ?>" class="btn btn-info" ><?php echo $languages[$x]["up_edit_btn"] ?></a>
 			</td>
 			<td>
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $row['sponsors_id'] ?>">
-        Delete
+        <?php echo $languages[$x]["up_del_btn"] ?>
       </button>
             </td>
             <!-- Modal -->
@@ -84,10 +84,11 @@ $results = mysqli_query($conn, "SELECT * FROM sponsors");
 	</div>
 	
 		<div class="inputform">
+	
 			<form method="post" action="includes_admin/edit_sponsors.inc.php" >
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
 				<div class="input-group form-group">
-					<label class="col">Address: </label>
+					<label class="col"><?php echo $languages[$x]["address"] ?>: </label>
 					<input class="form-control " type="text" name="sponsors_address" value="<?php echo htmlspecialchars($address); ?>">
 				</div>
 				<div class="input-group form-group">
@@ -95,10 +96,10 @@ $results = mysqli_query($conn, "SELECT * FROM sponsors");
 					<input class="form-control " type="text" name="sponsors_email" value="<?php echo htmlspecialchars($email); ?>">
 				</div>
 				<div class="input-group form-group">
-					<label class="col">Name: </label>
+					<label class="col"><?php echo $languages[$x]["up_name"] ?>: </label>
 					<input class="form-control " type="text" name="sponsors_name" value="<?php echo htmlspecialchars($name); ?>">
 				</div>
-				<button class="btn btn-center" type="submit" name="update"  >update</button>
+				<button class="btn btn-center" type="submit" name="update"  ><?php echo $languages[$x]["up_edit_btn"] ?></button>
 			</form>
 		</div>
 </div>

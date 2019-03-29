@@ -30,7 +30,7 @@ $results = mysqli_query($conn, "SELECT * FROM cat");
   <div class="col-md-10 offset-md-2 users_content">
     <?php if(isset($_GET['success'])){
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-          <strong>Success!</strong>
+          <strong>".$languages[$x]["success"]."</strong>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
             <span aria-hidden='true'>&times;</span>
           </button>
@@ -42,18 +42,18 @@ $results = mysqli_query($conn, "SELECT * FROM cat");
     <table class="table bordered">
   <thead>
     <tr>
-      <th>ID</th>
+      <th><?php echo $languages[$x]["up_id"] ?></th>
       <th>evidence ID</th>
-      <th>Name</th>
-      <th>Post Date</th>
-      <th>Born date</th>
-      <th>Castration</th>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Gender</th>
-      <th>1 =  in shelter | 2 = R.I.P</th>
+      <th><?php echo $languages[$x]["up_name"] ?></th>
+      <th><?php echo $languages[$x]["up_post_date"] ?></th>
+      <th><?php echo $languages[$x]["up_born"] ?></th>
+      <th><?php echo $languages[$x]["up_cast"] ?></th>
+      <th><?php echo $languages[$x]["up_height"] ?></th>
+      <th><?php echo $languages[$x]["up_weight"] ?></th>
+      <th><?php echo $languages[$x]["up_desc"] ?></th>
+      <th><?php echo $languages[$x]["up_breed"] ?></th>
+      <th><?php echo $languages[$x]["up_gender"] ?></th>
+      <th><?php echo $languages[$x]["up_live"] ?></th>
     </tr>
   </thead>
   
@@ -72,11 +72,11 @@ $results = mysqli_query($conn, "SELECT * FROM cat");
       <td><?php echo $row['gender']; ?></td>
       <td><?php echo $row['in_memoriam']; ?></td>
       <td>
-        <a href="edit_cats.php?edit=<?php echo $row['cat_id'] ?>" class="btn btn-info" >Edit</a>
+        <a href="edit_cats.php?edit=<?php echo $row['cat_id'] ?>" class="btn btn-info" ><?php echo $languages[$x]["up_edit_btn"] ?></a>
       </td>
       <td>
        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $row['cat_id'] ?>">
-        Delete
+        <?php echo $languages[$x]["up_del_btn"] ?>
       </button>
             </td>
             <!-- Modal -->
@@ -112,48 +112,48 @@ $results = mysqli_query($conn, "SELECT * FROM cat");
       <form method="post" action="includes_admin/edit_cats.inc.php" >
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <div class="input-group form-group">
-          <label class="col">Cat Name: </label>
+          <label class="col"><?php echo $languages[$x]["up_name"] ?>:</label>
            <input class="form-control " type="text" name="cat_name" value="<?php echo htmlspecialchars($cat_name); ?>">
         </div>
         <div class="input-group form-group">
-          <label class="col">Born date: </label>
+          <label class="col"><?php echo $languages[$x]["up_born"] ?>:</label>
           <input class="form-control " type="text" name="born_date" value="<?php echo htmlspecialchars($born_date); ?>">
         </div>
         <div class="input-group form-group">
-          <label class="col">Castration: </label>
+          <label class="col"><?php echo $languages[$x]["up_cast"] ?>: </label>
           <input class="form-control " type="text" name="castration" value="<?php echo htmlspecialchars($castration); ?>">
         </div>
         <div class="input-group form-group">
-          <label class="col">Height: </label>
+          <label class="col"><?php echo $languages[$x]["up_height"] ?>: </label>
           <input class="form-control " type="text" name="height" value="<?php echo htmlspecialchars($height); ?>">
         </div>
         <div class="input-group form-group">
-          <label class="col">Weight: </label>
+          <label class="col"><?php echo $languages[$x]["up_weight"] ?>: </label>
           <input class="form-control " type="text" name="weight" value="<?php echo htmlspecialchars($weight); ?>">
         </div>
-        <label class="col">Description: </label><br>
+        <label class="col"><?php echo $languages[$x]["up_desc"] ?>: </label><br>
         <div class="input-group form-group">
           
           <textarea id="textarea_users" class="form-control" type="text" name="cat_desc"><?php echo htmlspecialchars($cat_desc); ?></textarea>
         </div>
         <div class="input-group form-group">
-          <label class="col">Type: </label>
+          <label class="col"><?php echo $languages[$x]["up_breed"] ?>: </label>
           <input class="form-control " type="text" name="type" value="<?php echo htmlspecialchars($type); ?>">
         </div>
          <div class="input-group form-group">
-          <label class="col">Gender: </label>
+          <label class="col"><?php echo $languages[$x]["up_gender"] ?>: </label>
           <input class="form-control " type="text" name="gender" value="<?php echo htmlspecialchars($gender); ?>">
         </div>
         <div class="input-group form-group">
-          <label class="col">evidence ID: </label>
+          <label class="col"><?php echo $languages[$x]["up_id"] ?>: </label>
           <input class="form-control " type="text" name="cat_id_old" value="<?php echo $cat_id_old; ?>">
         </div>
          <div class="input-group form-group">
           <label class="col">Status: </label>
-           <input type="radio" name="in_memoriam" value="1" <?php  if ($in_memoriam == 1){?>checked <?php } ?>> In Shelter  <br>
+           <input type="radio" name="in_memoriam" value="1" <?php  if ($in_memoriam == 1){?>checked <?php } ?>><?php echo $languages[$x]["up_living"] ?>  <br>
            <input type="radio" name="in_memoriam" value="2" <?php  if ($in_memoriam == 2){?>checked <?php } ?>> R.I.P.<br>
         </div>
-        <button class="btn btn-center" type="submit" name="update">update</button>
+        <button class="btn btn-center" type="submit" name="update"><?php echo $languages[$x]["up_update_btn"] ?></button>
       </form>
     </div>
   </div>

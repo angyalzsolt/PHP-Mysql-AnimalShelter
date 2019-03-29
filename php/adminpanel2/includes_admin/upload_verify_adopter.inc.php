@@ -1,12 +1,12 @@
 <?php  
 include_once "dbh.inc.php";
 if (isset($_GET['success'])) {
-  echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Verificated successfully!</strong>
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button>
-</div>";
+//   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+//   <strong>Verificated successfully!</strong>
+//   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+//     <span aria-hidden='true'>&times;</span>
+//   </button>
+// </div>";
       }
 
 if(isset($_POST['verify'])) {

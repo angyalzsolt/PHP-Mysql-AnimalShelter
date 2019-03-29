@@ -4,6 +4,9 @@ include("includes/dbh.inc.php");
 include("includes/output_cat.inc.php");
 include("includes/upload_support.inc.php");
 include("includes/upload_adopt.inc.php");
+include("includes/config.php");
+
+
 ?>
 <link rel="stylesheet" type="text/css" href="../css/dogs_cats.css">
 <div class="break">

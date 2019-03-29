@@ -7,10 +7,10 @@ require_once("includes_admin/dbh.inc.php");
 <div class="container">
 <div class="row">
 	<div class="col-md-10 offset-md-2">
-		<h2 class="mb-4">1. Upload Profile Picture</h2>
+		<h2 class="mb-4"><?php echo $languages[$x]["up_img1"] ?></h2>
 		<form  method="post" action="includes_admin/image_upload_sponsors.inc.php" enctype="multipart/form-data" class="mb-4">
 			<input id="file" type="file" name="file" value="add" onchange="readURL(this)" required="true"> <br>
-			<button type="submit" class="mt-4 btn btn-primary" name="submit">UPLOAD</button>
+			<button type="submit" class="mt-4 btn btn-primary" name="submit"><?php echo $languages[$x]["up_load_btn"] ?></button>
 		</form>
 		<hr>
 	</div>

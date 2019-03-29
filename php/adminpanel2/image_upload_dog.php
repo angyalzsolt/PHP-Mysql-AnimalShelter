@@ -12,18 +12,18 @@ require_once("includes_admin/dbh.inc.php");
 		<?php 
         if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Success!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
 </div>";
       } ?>
-		<h2 class="mb-4">1. Upload Profile Picture</h2>
+		<h2 class="mb-4">1.STEP: <?php echo $languages[$x]["up_img1"] ?></h2>
 		<form  method="post" action="includes_admin/image_upload_dog.inc.php" enctype="multipart/form-data" class="mb-4">
 			<input type="file" name="file" value="add" onchange="readURL(this)" required="true"> <br>
-			<button type="submit" class="mt-4 btn btn-primary" name="submit">UPLOAD</button>
+			<button type="submit" class="mt-4 btn btn-primary" name="submit"><?php echo $languages[$x]["up_load_btn"] ?></button>
 		</form>
-		<a href="upload_dog.php?success" class=" mt-4 btn btn-primary">SKIP IMAGE UPLOAD</a>
+		<a href="upload_dog.php?success" class=" mt-4 btn btn-primary"><?php echo $languages[$x]["up_skip_btn"] ?></a>
 		<hr>
 	</div>
 	<div class="col-md-5"><img id="review" src="#" alt=""></div>

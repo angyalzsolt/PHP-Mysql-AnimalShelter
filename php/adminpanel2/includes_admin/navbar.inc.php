@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include("includes_admin/dbh.inc.php");
+
 include("includes_admin/output_verify_adopter.inc.php");
        $sql2 = "SELECT * FROM supporter
                 LEFT JOIN cat ON supporter.fk_cat_id = cat.cat_id 
@@ -64,10 +65,22 @@ if (!isset($_SESSION['userUid']))
         =======================-->
         <header class="header">
           <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
+
             <div  style="width:5vh;" ></div>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
+
+             </div>
+             <div class="lang-btn-group">
+              <form method="post">
+                <input class="lang-btn" type="submit" name="eng" value="ENG">
+                 <span>|</span>
+                 <input class="lang-btn" type="submit" name="ger" value="GER">
+                 <span>|</span>
+                 <input class="lang-btn" type="submit" name="slo" value="SLO">
+                </form>
+              <?php   include("includes_admin/admin_config.php");  ?>
              </div>
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
               <ul class="navbar-nav">
@@ -89,7 +102,7 @@ if (!isset($_SESSION['userUid']))
       
         <li>
           <a href='list_adopters.php'>
-        <i class='fa fa-users text-aqua'></i> New Adoption request! (<?php echo $nrows; ?>) 
+        <i class='fa fa-users text-aqua'></i><?php echo $languages[$x]["notification1"] ?> (<?php echo $nrows; ?>) 
         </a>
       </li>
       <?php } ;
@@ -97,7 +110,7 @@ if (!isset($_SESSION['userUid']))
        if(!empty($rows2)){ ?>
       <li>
           <a href='list_supporters.php'>      
-        <i class='fa fa-users text-aqua'></i> New Support request! (<?php echo $nrows2; ?>)
+        <i class='fa fa-users text-aqua'></i> <?php echo $languages[$x]["notification2"] ?> (<?php echo $nrows2; ?>)
         </a>
       </li>
       <?php } ;
@@ -105,45 +118,11 @@ if (!isset($_SESSION['userUid']))
        if(!empty($rows3)){ ?>
       <li>
           <a href='list_eshop.php'>
-        <i class='fa fa-users text-aqua'></i> New Buying request! (<?php echo $nrows3; ?>) 
+        <i class='fa fa-users text-aqua'></i> <?php echo $languages[$x]["notification3"] ?> (<?php echo $nrows3; ?>) 
         </a>
       </li>
       <?php } ;?>
 
-
-
-
-                      <!--
-                        <li>
-                          <a href='#'>
-                            <i class='fa fa-users text-aqua'></i> 5 new members joined today
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                            page and may cause design problems
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                            page and may cause design problems
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                          </a>
-                        </li>
-                        <li></li>
-                        -->
-                        
                       </ul>
                     </li>
                   </ul>
@@ -177,91 +156,91 @@ if (!isset($_SESSION['userUid']))
               </div>
             </div>
             <ul class="list-sidebar bg-defoult">
-              <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+              <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> <?php echo $languages[$x]["dashboard"] ?> </span> <span class="fa fa-chevron-left pull-right"></span> </a>
               <ul class="sub-menu collapse" id="dashboard">
-                <li class="active"><a href="admin_landing_page2.php">Start Admin Page</a></li>
-                <li class="active"><a href="../index.php">Go Main Page</a></li>
+                <li class="active"><a href="admin_landing_page2.php"><?php echo $languages[$x]["dashboard1"] ?></a></li>
+                <li class="active"><a href="../index.php"><?php echo $languages[$x]["dashboard2"] ?></a></li>
               </ul>
             </li>
             
-            <li> <a href="#" data-toggle="collapse" data-target="#dogs" class="collapsed active" > <i class="fas fa-dog"></i> <span class="nav-label">Dogs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+            <li> <a href="#" data-toggle="collapse" data-target="#dogs" class="collapsed active" > <i class="fas fa-dog"></i> <span class="nav-label"><?php echo $languages[$x]["dogs"] ?></span> <span class="fa fa-chevron-left pull-right"></span> </a>
             <ul class="sub-menu collapse" id="dogs">
-              <li><a href="upload_dog.php">Upload Dog</a></li>
-              <li><a href="edit_dogs.php">Edit Dog</a></li>
-              <li><a href="select_dog.php">Edit Dog Image</a></li>
+              <li><a href="upload_dog.php"><?php echo $languages[$x]["dogs1"] ?></a></li>
+              <li><a href="edit_dogs.php"><?php echo $languages[$x]["dogs2"] ?></a></li>
+              <li><a href="select_dog.php"><?php echo $languages[$x]["dogs3"] ?></a></li>
             </ul>
           </li>
-            <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fas fa-cat"></i> <span class="nav-label">Cats</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+            <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fas fa-cat"></i> <span class="nav-label"><?php echo $languages[$x]["cats"] ?></span> <span class="fa fa-chevron-left pull-right"></span> </a>
             <ul class="sub-menu collapse" id="products">
-              <li><a href="upload_cat.php">Upload Cat</a></li>
-              <li><a href="edit_cats.php">Edit Cat</a></li>
-              <li><a href="select_cat.php">Edit Cat Image</a></li>
+              <li><a href="upload_cat.php"><?php echo $languages[$x]["cats1"] ?></a></li>
+              <li><a href="edit_cats.php"><?php echo $languages[$x]["cats2"] ?></a></li>
+              <li><a href="select_cat.php"><?php echo $languages[$x]["cats3"] ?></a></li>
             </ul>
           </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Edit Page</span><span class="fa fa-chevron-left pull-right"></span></a>
+          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label"><?php echo $languages[$x]["edit"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="tables" >
-            <li><a href="edit_support.php">Edit Support</a></li>
-            <li><a href="edit_adopt.php">Edit Adopt</a></li>
-            <li><a href="edit_mission.php">Edit Mission</a></li>
+            <li><a href="edit_support.php"><?php echo $languages[$x]["edit1"] ?></a></li>
+            <li><a href="edit_adopt.php"><?php echo $languages[$x]["edit2"] ?></a></li>
+            <li><a href="edit_mission.php"><?php echo $languages[$x]["edit3"] ?></a></li>
           </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#info" class="collapsed active" ><i class="fas fa-info-circle"></i> <span class="nav-label">Important Info</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#info" class="collapsed active" ><i class="fas fa-info-circle"></i> <span class="nav-label"><?php echo $languages[$x]["info"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="info" >
-            <li><a href="upload_info.php">Upload Info</a></li>
-            <li><a href="edit_info.php">Edit Info</a></li>
+            <li><a href="upload_info.php"><?php echo $languages[$x]["info1"] ?></a></li>
+            <li><a href="edit_info.php"><?php echo $languages[$x]["info2"] ?></a></li>
           </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#team" class="collapsed active" ><i class="fas fa-people-carry"></i> <span class="nav-label">Team</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#team" class="collapsed active" ><i class="fas fa-people-carry"></i> <span class="nav-label"><?php echo $languages[$x]["team"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="team" >
-            <li><a href="upload_team.php">Upload Team</a></li>
-            <li><a href="edit_team.php">Edit Team</a></li>
+            <li><a href="upload_team.php"><?php echo $languages[$x]["team1"] ?></a></li>
+            <li><a href="edit_team.php"><?php echo $languages[$x]["team2"] ?></a></li>
           </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#sponsors" class="collapsed active" ><i class="fas fa-ad"></i> <span class="nav-label">Sponsors</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#sponsors" class="collapsed active" ><i class="fas fa-ad"></i> <span class="nav-label"><?php echo $languages[$x]["sponsor"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="sponsors" >
-            <li><a href="upload_sponsors.php">Upload Sponsor</a></li>
-            <li><a href="edit_sponsors.php">Edit Sponsors</a></li>
+            <li><a href="upload_sponsors.php"><?php echo $languages[$x]["sponsor1"] ?></a></li>
+            <li><a href="edit_sponsors.php"><?php echo $languages[$x]["sponsor2"] ?></a></li>
           </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#reports" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Reports</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#reports" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label"><?php echo $languages[$x]["reports"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="reports" >
-            <li><a href="upload_report.php">Upload Report</a></li>
-            <li><a href="edit_report.php">Edit Reports</a></li>
-            <li><a href="upload_report_image.php">Upload Annual Report</a></li>
-            <li><a href="edit_report_image.php">Edit Annual Reports</a></li>
+            <li><a href="upload_report.php"><?php echo $languages[$x]["reports1"] ?></a></li>
+            <li><a href="edit_report.php"><?php echo $languages[$x]["reports2"] ?></a></li>
+            <li><a href="upload_report_image.php"><?php echo $languages[$x]["reports3"] ?></a></li>
+            <li><a href="edit_report_image.php"><?php echo $languages[$x]["reports4"] ?></a></li>
           </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#Shelter" class="collapsed active" ><i class="fas fa-warehouse"></i> <span class="nav-label">Shelter</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#Shelter" class="collapsed active" ><i class="fas fa-warehouse"></i> <span class="nav-label"><?php echo $languages[$x]["shelter"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="Shelter" >
-            <li><a href="upload_shelter.php">Upload Shelter</a></li>
-            <li><a href="edit_shelter.php">Edit Shelter</a></li>
+            <li><a href="upload_shelter.php"><?php echo $languages[$x]["shelter1"] ?></a></li>
+            <li><a href="edit_shelter.php"><?php echo $languages[$x]["shelter2"] ?></a></li>
           </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#users" class="collapsed active" ><i class="fas fa-user-alt"></i> <span class="nav-label">Admin Users</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#users" class="collapsed active" ><i class="fas fa-user-alt"></i> <span class="nav-label"><?php echo $languages[$x]["user"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="users" >
-            <li><a href="register.php">Upload User</a></li>
-            <li><a href="edit_users.php">Edit Users</a></li>
+            <li><a href="register.php"><?php echo $languages[$x]["user1"] ?></a></li>
+            <li><a href="edit_users.php"><?php echo $languages[$x]["user2"] ?></a></li>
           </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#supporters" class="collapsed active" ><i class="fas fa-user-shield"></i> <span class="nav-label">Supporters</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#supporters" class="collapsed active" ><i class="fas fa-user-shield"></i> <span class="nav-label"><?php echo $languages[$x]["support"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="supporters" >
-            <li><a href="list_supporters.php">List Supporter</a></li>
-            <li><a href="verify_supporter.php">Waiting Supporter</a></li>
+            <li><a href="list_supporters.php"><?php echo $languages[$x]["support1"] ?></a></li>
+            <li><a href="verify_supporter.php"><?php echo $languages[$x]["support2"] ?></a></li>
             </ul>
         </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#adopters" class="collapsed active" ><i class="fas fa-user-tag"></i> <span class="nav-label">Adopters</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#adopters" class="collapsed active" ><i class="fas fa-user-tag"></i> <span class="nav-label"><?php echo $languages[$x]["adopt"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
           <ul  class="sub-menu collapse" id="adopters" >
-            <li><a href="list_adopters.php">List Adopter</a></li>
-            <li><a href="verify_adopter.php">Waiting Adopter</a></li>
+            <li><a href="list_adopters.php"><?php echo $languages[$x]["adopt1"] ?></a></li>
+            <li><a href="verify_adopter.php"><?php echo $languages[$x]["adopt2"] ?></a></li>
             </ul>
         </li>
 
-        <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label">Selling</span><span class="fa fa-chevron-left pull-right"></span></a>
+        <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label"><?php echo $languages[$x]["selling"] ?></span><span class="fa fa-chevron-left pull-right"></span></a>
         <ul  class="sub-menu collapse" id="e-commerce" >
-          <li><a href="list_eshop.php">List E-Shop</a></li>
-          <li><a href="upload_eshop.php">Upload E-Shop</a></li>
-          <li><a href="list_auctions2.php">List Auction</a></li>
-          <li><a href="upload_auctions.php">Upload Auction</a></li>
+          <li><a href="list_eshop.php"><?php echo $languages[$x]["selling1"] ?></a></li>
+          <li><a href="upload_eshop.php"><?php echo $languages[$x]["selling2"] ?></a></li>
+          <li><a href="list_auctions2.php"><?php echo $languages[$x]["selling3"] ?></a></li>
+          <li><a href="upload_auctions.php"><?php echo $languages[$x]["selling4"] ?></a></li>
         </ul>
       </li>
      <!-- <li> <a href="#" data-toggle="collapse" data-target="#video" class="collapsed active" ><i class="fab fa-youtube"></i> <span class="nav-label">Video</span><span class="fa fa-chevron-left pull-right"></span></a>
@@ -270,7 +249,7 @@ if (!isset($_SESSION['userUid']))
           <li><a  href="edit_video.php">Edit Video</a></li>
         </ul>
       </li>-->
-      <li > <a class="pt-4" style="background-color: black;" href="includes_admin/logout.inc.php?logout"><i class="fas fa-sign-out-alt"></i> <span class="nav-label">Log Out</span></a> </li>
+      <li > <a class="pt-4" style="background-color: black;" href="includes_admin/logout.inc.php?logout"><i class="fas fa-sign-out-alt"></i> <span class="nav-label"><?php echo $languages[$x]["logout"] ?></span></a> </li>
     </ul>
     </div>
     </aside>

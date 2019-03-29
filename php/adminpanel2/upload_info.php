@@ -16,24 +16,24 @@ require_once 'includes_admin/upload_info.inc.php';
           </button>
         </div>";
         }   ?>
-         <center><h2>Info Upload</h2></center>
+         <center><h2><?php echo $languages[$x]["upload_info"] ?></h2></center>
        <form action="includes_admin/upload_info.inc.php" method="POST" class="needs-validation" novalidate>
           <div class="form-group">
-            <label for="validationCustom01">Title</label>
+            <label for="validationCustom01"><?php echo $languages[$x]["edit_title"] ?>:</label>
             <input type="text" id="validationCustom01" class="form-control" name="title" required>
             <div class="invalid-feedback">
               Please provide a valid title.
             </div>
           </div>
           <div class="form-group">
-            <label for="validationCustom03">Text</label>
+            <label for="validationCustom03">Text: </label>
            
             <textarea class="form-control" id="validationCustom03" type="text" name="text"  rows="18" required></textarea>
             <div class="invalid-feedback">
               Please provide a valid text.
             </div>
           </div>
-          <input class="btn btn-warning"" type="submit" value="Next" name="upload_info" />
+          <input class="btn btn-warning"" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_info" />
         </form>
   </div>
 </div>

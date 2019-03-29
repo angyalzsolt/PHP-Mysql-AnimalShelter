@@ -20,7 +20,7 @@ while ($row = mysqli_fetch_array($results)) {
 			<?php 
 	if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Edited successfully!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
@@ -28,16 +28,16 @@ while ($row = mysqli_fetch_array($results)) {
       } ?>
 		<form action="includes_admin/edit_info.inc.php" method="POST">
 		<div class="form-group">
-			<label><b>Title: </b></label>
+			<label><b><?php echo $languages[$x]["edit_title"] ?>: </b></label>
 			<input class="form-control " type="text" name="title" value="<?php echo htmlspecialchars($row["info_title"]); ?>">
 		</div>
 		<div class="form-group">
 			<label><b>Text: </b></label>
 			<textarea class="form-control" type="text" name="text"  rows="18"><?php echo htmlspecialchars($row["info_text"]); ?></textarea>
 		</div>          
-		<button class="btn btn-warning" type="submit" name="edit_info" value="<?php echo $row["info_id"]; ?>" >Edit</button>
+		<button class="btn btn-warning" type="submit" name="edit_info" value="<?php echo $row["info_id"]; ?>" > <?php echo $languages[$x]["up_edit_btn"] ?></button>
 		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $row['info_id']; ?>">
-        Delete
+        <?php echo $languages[$x]["up_del_btn"] ?>
       </button>
 
       <!-- Modal -->
@@ -45,7 +45,7 @@ while ($row = mysqli_fetch_array($results)) {
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+              <h5 class="modal-title" id="exampleModalLabel"> <?php echo $languages[$x]["up_del_btn"] ?></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -55,7 +55,7 @@ while ($row = mysqli_fetch_array($results)) {
               <p><?php echo $row['info_title']; ?></p>
             </div>
             <div class="modal-footer">
-              <a href="edit_info.php?del=<?php echo $row['info_id']; ?>" class="btn btn-danger">Delete</a>
+              <a href="edit_info.php?del=<?php echo $row['info_id']; ?>" class="btn btn-danger"> <?php echo $languages[$x]["up_del_btn"] ?></a>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>

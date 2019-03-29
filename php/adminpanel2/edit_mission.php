@@ -12,13 +12,13 @@ include_once "includes_admin/edit_mission.inc.php";
 		<?php 
         if (isset($_GET['success'])) {
   echo "<div class='col-md-10 offset-md-2' >
-  	
-  </div><div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Success!</strong>
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button>
-</div></div>";
+		  <div class='alert alert-success alert-dismissible fade show' role='alert'>
+		  <strong>".$languages[$x]["success"]."</strong>
+		  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+		    <span aria-hidden='true'>&times;</span>
+		  </button>
+		</div>
+		</div>";
       } ?>
 	<?php if (isset($_SESSION['userUid']))
       {
@@ -28,16 +28,16 @@ include_once "includes_admin/edit_mission.inc.php";
 	foreach ($rows as $row) {
 		echo "<hr>
 		<div class='col-md-10 offset-md-2'>
-		<form action='edit_mission.php' method='POST'>
+		<form action='includes_admin/edit_mission.inc.php' method='POST'>
 		<div class='form-group'>
-			<label><b>Title: </b></label>
+			<label><b>".$languages[$x]["edit_title"].": </b></label>
 			<input class='form-control ' type='text' name='title' value='".htmlspecialchars($row["mission_title"])."'>
 		</div>
 		<div class='form-group'>
 			<label><b>Text: </b></label>
 			<textarea class='form-control' type='text' name='text'  rows='18'>".htmlspecialchars($row["mission_text"])."</textarea>
 		</div>          
-		<button class='btn btn-warning' type='submit' name='edit_mission' value='".$row["mission_id"]."' >Edit</button>
+		<button class='btn btn-warning' type='submit' name='edit_mission' value='".$row["mission_id"]."' >".$languages[$x]["up_edit_btn"]."</button>
 		</form><br>
 		</div>
 		

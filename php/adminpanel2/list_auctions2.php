@@ -25,17 +25,17 @@ if (isset($_GET['delete'])) {
   <thead>
     <tr>
       <th>ID:</th>
-      <th>Bid ID:</th>
-      <th>Product</th>
-      <th>First Price:</th>
-      <th>Bid:</th>
-      <th>From:</th>
+      <th><?php echo $languages[$x]["bid_id"] ?>:</th>
+      <th><?php echo $languages[$x]["product"] ?></th>
+      <th><?php echo $languages[$x]["first_price"] ?>:</th>
+      <th><?php echo $languages[$x]["bid"] ?>:</th>
+      <th><?php echo $languages[$x]["from"] ?>:</th>
       <th>E-mail:</th>
-      <th>Address:</th>
+      <th><?php echo $languages[$x]["address"] ?>:</th>
       <th>Telephone:</th>
-      <th>Comment:</th>
-      <th>Bid Date:</th>
-      <th>Auction End:</th>
+      <th><?php echo $languages[$x]["comment"] ?>:</th>
+      <th><?php echo $languages[$x]["bid_date"] ?>:</th>
+      <th><?php echo $languages[$x]["end_auct"] ?>:</th>
     </tr>
   </thead>
   
@@ -54,7 +54,7 @@ if (isset($_GET['delete'])) {
       <td><?php echo $row2['bid_date']; ?></td>
       <td><?php echo $row2['end_date']; ?></td>
       <td>
-        <a href="list_auctions2.php?delete=<?php echo $row2['bid_id']; ?>" class="btn btn-danger">Delete</a>
+        <a href="list_auctions2.php?delete=<?php echo $row2['bid_id']; ?>" class="btn btn-danger"><?php echo $languages[$x]["up_del_btn"] ?></a>
       </td>
       </tr>
   <?php } ?>
@@ -75,10 +75,10 @@ if (isset($_GET['delete'])) {
   <thead>
     <tr>
       <th>ID:</th>
-      <th>Product</th>
-      <th>First Price:</th>
-      <th>Post Date:</th>
-      <th>End Date:</th>
+      <th><?php echo $languages[$x]["product"] ?></th>
+      <th><?php echo $languages[$x]["first_price"] ?>:</th>
+      <th><?php echo $languages[$x]["post_date"] ?>:</th>
+      <th><?php echo $languages[$x]["end_auct"] ?>:</th>
     </tr>
   </thead>
   
@@ -91,10 +91,10 @@ if (isset($_GET['delete'])) {
       <td><?php echo $row['end_date']; ?></td>
       <?php echo 
       '<td>
-        <a href="list_auctions2.php?bids='.$row['auction_product_id'].'" class="btn btn-warning">See Bids</a>
+        <a href="list_auctions2.php?bids='.$row['auction_product_id'].'" class="btn btn-warning">'.$languages[$x]["see_bid"].'</a>
       </td>
       <td>
-        <a href="list_auctions2.php?del='.$row['auction_product_id'].'" class="btn btn-danger">Delete</a>
+        <a href="list_auctions2.php?del='.$row['auction_product_id'].'" class="btn btn-danger">'.$languages[$x]["up_del_btn"].'</a>
       </td>'
       ?>
       </tr>

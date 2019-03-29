@@ -24,7 +24,7 @@ $results = mysqli_query($conn, "SELECT * FROM reports");
 		<?php 
         if (isset($_GET['success'])) {
   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Success!</strong>
+  <strong>".$languages[$x]["success"]."</strong>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button>
@@ -35,10 +35,10 @@ $results = mysqli_query($conn, "SELECT * FROM reports");
 		<table class="table bordered">
 	<thead>
 		<tr>
-			<th>Date</th>
-			<th>Title</th>
-			<th>Keywords</th>
-			<th>Actions</th>
+			<th><?php echo $languages[$x]["rep_date"] ?></th>
+			<th><?php echo $languages[$x]["edit_title"] ?></th>
+			<th><?php echo $languages[$x]["rep_keywords"] ?></th>
+			<th><?php echo $languages[$x]["rep_action"] ?></th>
 		</tr>
 	</thead>
 	
@@ -48,11 +48,11 @@ $results = mysqli_query($conn, "SELECT * FROM reports");
 			<td><?php echo $row['name']; ?></td>
 			<td><?php echo $row['keywords']; ?></td>
 			<td>
-				<a href="edit_report.php?edit=<?php echo $row['reports_id'] ?>" class="btn btn-info" >Edit</a>
+				<a href="edit_report.php?edit=<?php echo $row['reports_id'] ?>" class="btn btn-info" ><?php echo $languages[$x]["up_edit_btn"] ?></a>
 			</td>
 			<td>
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $row['reports_id'] ?>">
-        Delete
+        <?php echo $languages[$x]["up_del_btn"] ?>
       </button>
             </td>
             <!-- Modal -->
@@ -89,25 +89,25 @@ $results = mysqli_query($conn, "SELECT * FROM reports");
 		<div class="inputform">
 			<form method="post" action="includes_admin/edit_report.inc.php" >
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
-				<label class="col">Text: </label><br>
-        <div class="input-group form-group">
-          
-          <textarea id="textarea_users" class="form-control" type="text" rows='18'name="report_description"><?php echo  htmlspecialchars($description); ?></textarea>
-        </div>
-				
 				<div class="input-group form-group">
-					<label class="col">Title: </label>
+					<label class="col"><?php echo $languages[$x]["edit_title"] ?>: </label>
 					<input class="form-control" type="text" name="report_name" value="<?php echo htmlspecialchars($name); ?>">
 				</div>
+					<label class="col">Text: </label><br>
+		        <div class="input-group form-group">
+		          
+		          <textarea id="textarea_users" class="form-control" type="text" rows='18'name="report_description"><?php echo  htmlspecialchars($description); ?></textarea>
+		        </div>
+				
 				<div class="input-group form-group">
-					<label class="col">Date: </label>
+					<label class="col"><?php echo $languages[$x]["rep_date"] ?>: </label>
 					<input class="form-control" type="date" name="report_date" value="<?php echo htmlspecialchars($date); ?>">
 				</div>
 				<div class="input-group form-group">
-					<label class="col">Keywords: </label>
+					<label class="col"><?php echo $languages[$x]["rep_keywords"] ?>: </label>
 					<input class="form-control" type="text" name="report_keywords" value="<?php echo htmlspecialchars($keywords); ?>">
 				</div>
-				<button class="btn btn-center" type="submit" name="update">update</button>
+				<button class="btn btn-center" type="submit" name="update"><?php echo $languages[$x]["up_update_btn"] ?></button>
 			</form>
 		</div>
 	</div></div>

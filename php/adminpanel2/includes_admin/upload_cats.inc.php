@@ -1,12 +1,12 @@
 <?php 
 include("dbh.inc.php");
 if (isset($_GET['success'])) {
-  echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Uploaded successfully!</strong>
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button>
-</div>";
+//   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+//   <strong>Uploaded successfully!</strong>
+//   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+//     <span aria-hidden='true'>&times;</span>
+//   </button>
+// </div>";
       }
 if(isset($_POST['upload_cat_table'])) {
   $cat_name = mysqli_real_escape_string($conn, $_POST['cat_name']);

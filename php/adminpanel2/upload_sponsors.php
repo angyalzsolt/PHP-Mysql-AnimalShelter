@@ -25,17 +25,17 @@ if(isset($_GET['success'])){
   </button>
 </div>";
       } ?>
-         <center><h2>Sponsors Upload</h2></center>
+         <center><h2><?php echo $languages[$x]["spon_title"] ?></h2></center>
        <form action="includes_admin/upload_sponsors.inc.php" method="POST" class="needs-validation" novalidate>
           <div class="form-group">
-            <label for="error1">Sponsor Name</label>
+            <label for="error1"><?php echo $languages[$x]["spon_name"] ?></label>
             <input type="text" id="error1" class="form-control" name="name" required>
             <div class="invalid-feedback">
               Please provide a value.
             </div>
           </div>
           <div class="form-group">
-            <label for="error2">Address</label>
+            <label for="error2"><?php echo $languages[$x]["address"] ?></label>
             <input type="text" id="error2" class="form-control" name="address" required>
             <div class="invalid-feedback">
               Please provide a value.
@@ -48,7 +48,7 @@ if(isset($_GET['success'])){
               Please provide a value.
             </div>
           </div>
-          <input class="btn btn-warning" type="submit" value="Next" name="upload_sponsors" />
+          <input class="btn btn-warning" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_sponsors" />
         </form>
   </div>
   <?php } 
