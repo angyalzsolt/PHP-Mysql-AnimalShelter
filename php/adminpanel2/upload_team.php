@@ -30,24 +30,24 @@ require_once 'includes_admin/upload_team.inc.php';
             <label for="validationCustom01"><?php echo $languages[$x]["team_name"] ?></label>
             <input type="text" id="validationCustom01" class="form-control" name="name" required>
             <div class="invalid-feedback">
-              Please provide a valid name.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="validationCustom02"><?php echo $languages[$x]["team_pos"] ?></label>
             <input type="text"  id="validationCustom02" class="form-control" name="position" required>
             <div class="invalid-feedback">
-              Please provide a valid position.
+             <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="validationCustom03"><?php echo $languages[$x]["team_desc"] ?></label>
             <input type="text"  id="validationCustom03" class="form-control" name="desc" required>
             <div class="invalid-feedback">
-              Please provide a valid description.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
-          <input class="btn btn-warning"" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_team" />
+          <input class="btn btn-warning" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_team" />
         </form>
   </div>
 </div>

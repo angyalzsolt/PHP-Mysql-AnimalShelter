@@ -2,6 +2,7 @@
 include("includes/navbar.inc.php");
 include("includes/dbh.inc.php");
 include("includes/output_reports.inc.php");
+
  ?>
 <link rel="stylesheet" type="text/css" href="../css/reports.css">
 <div class="break">
@@ -10,9 +11,9 @@ include("includes/output_reports.inc.php");
     <div class="container">
     <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-weight-bold">Reports</h1><br>
+          <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["reports_title"] ?></h1><br>
           <a class="btn btn-primary btn-lg" href="reports.php" role="button">Back to all..</a>
-          <a class="ml-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/files/vyr_sprava_2015_orig.pdf" role="button">Annual Reports</a>
+          <a class="ml-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/files/vyr_sprava_2015_orig.pdf" role="button"><?php echo $languages[$x]["annual_reports"] ?></a>
       </div>
   </div>
   <div class="row">

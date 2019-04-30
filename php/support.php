@@ -8,9 +8,9 @@ include("includes/dbh.inc.php");
 </div>
       <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-weight-bold">Why and how to support?</h1>
-          <p class="lead my-3">Supporting a puppy can be exciting. You are choosing a new companion for many years to come...</p>
-          <p class="lead mb-0">Our advice...</p>
+          <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["support_title"] ?></h1>
+          <p class="lead my-3"><?php echo $languages[$x]["support_subtitle"] ?></p>
+          <p class="lead mb-0"><?php echo $languages[$x]["our_advice"] ?></p>
         </div>
       </div>
       <div class="row"> 

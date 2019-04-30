@@ -59,18 +59,18 @@ $results = mysqli_query($conn, "SELECT * FROM sponsors");
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel"><?php echo $languages[$x]["modal_title"] ?></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>Are you really want to delete this record?</p>
-              <p>Name: <?php echo $row['sponsors_name'] ?></p>
+              <p><?php echo $languages[$x]["modal_question"] ?></p>
+              <p><?php echo $languages[$x]["up_name"] ?>: <?php echo $row['sponsors_name'] ?></p>
               <p>Position: <?php echo $row['sponsors_address'] ?></p>
             </div>
             <div class="modal-footer">
-              <a href="edit_sponsors.php?del=<?php echo $row['sponsors_id'] ?>" class="btn btn-danger">Delete</a>
+              <a href="edit_sponsors.php?del=<?php echo $row['sponsors_id'] ?>" class="btn btn-danger"><?php echo $languages[$x]["up_del_btn"] ?></a>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>

@@ -51,7 +51,7 @@ while ($row = mysqli_fetch_array($results)) {
               </button>
             </div>
             <div class="modal-body">
-              <p>Are you really want to delete this record?</p>
+              <p><?php echo $languages[$x]["modal_question"] ?></p>
               <p><?php echo $row['info_title']; ?></p>
             </div>
             <div class="modal-footer">

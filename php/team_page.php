@@ -10,7 +10,7 @@ include("includes/output_team.inc.php");
     <div class="container">
         <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
             <div class="col-md-6 px-0">
-              <h1 class="display-4 font-weight-bold">Meet Our Team</h1>
+              <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["meet_team"] ?></h1>
           </div>
       </div>
       <div class="row">

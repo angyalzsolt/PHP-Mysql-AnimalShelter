@@ -4,20 +4,6 @@ include("includes/dbh.inc.php");
 include("includes/output_dog.inc.php");
 include("includes/upload_support.inc.php");
 include("includes/upload_adopt.inc.php");
-/*
-if(isset($_GET['ageselect'])){
-  $date = $_GET['age'];
-  $sql = "SELECT * FROM dog 
-          LEFT JOIN image_dog ON image_dog.fk_dog_id = dog.dog_id
-          LEFT JOIN main_image_dog ON main_image_dog.fk_dog_id = dog.dog_id 
-          WHERE dog.born_date > `$date`;";
-  $result = mysqli_query($conn, $sql);
-  $rows = $result->fetch_all(MYSQLI_ASSOC);
-  foreach ($rows as $row ) {
-          echo $row['dog_name'];
-        }      
-}
-*/
 ?>
 <link rel="stylesheet" type="text/css" href="../css/dogs_cats.css">
 
@@ -26,27 +12,9 @@ if(isset($_GET['ageselect'])){
 <div class="container">
   <div class="row">
     <div class="col-10 offset-1">
-      <h1>Dogs</h1> 
+      <h1><?php echo $languages[$x]["dogs"] ?></h1> 
       <hr>
     </div>
-
-       <!--
-        Normal Search
-    <div class="col-10 offset-1">
-      <form action="dog_result.php" method="GET" accept-charset="utf-8">
-        <select class="form-control" name="age">
-        <?php
-        $thisYear = date("Y");
-         foreach ($rows2 as $row) {
-          echo $row["born_date"];
-            echo ' <option value="'.$row["YEAR(born_date)"].'">'.($thisYear - $row["YEAR(born_date)"]).' years old</option>';
-          };
-         ?>
-        </select>
-        <input class="btn btn-primary" value="Search" type="submit" name="ageselect">
-      </form> 
-       </div> 
-       --> 
     <div class="col-10 offset-1">
       <div class="row">
         <?php $i=0;$j=10;
@@ -56,11 +24,11 @@ if(isset($_GET['ageselect'])){
             <img class="imag" src="../image_upload/<?php echo $row["main_image"]; ?>" onerror="this.src = '../img/no-image_dog.jpg';"  alt="">
             <div class="buttons_div">
               <button class="btn btn-success mb-2 btn-block buttons" data-backdrop="static" data-keyboard="false" onclick="getImgSrc('moreModal'+<?php echo $row["dog_id"] ?>)"   type="button" data-toggle="modal" data-target="#moreModal<?php
-                echo $row["dog_id"];?>">More..</button>
+                echo $row["dog_id"];?>"><?php echo $languages[$x]["more"] ?></button>
               <button class="btn btn-success btn-block mb-2 buttons"  type="button" data-toggle="modal" data-target="#supportModal<?php
-                echo $row["dog_id"];?>">Support</button>
+                echo $row["dog_id"];?>"><?php echo $languages[$x]["support"] ?></button>
               <button class="btn btn-success btn-block buttons" type="button" data-toggle="modal" data-target="#adoptModal<?php
-                echo $row["dog_id"];?>">Adopt</button>
+                echo $row["dog_id"];?>"><?php echo $languages[$x]["adopt_menu"] ?></button>
             </div>
           </div>
         </div>
@@ -75,15 +43,15 @@ if(isset($_GET['ageselect'])){
                 </button>
               </div>
               <div class="modal-body">
-                <p class="mb-0"><b>Name:</b> <?php echo $row["dog_name"]; ?> <br></p>
-                <p class="mb-0"><b>Gender:</b> <?php echo $row["gender"]; ?> <br></p>
-                <p class="mb-0"><b>Type:</b> <?php echo $row["type"]; ?> <br></p>
-                <p class="mb-0"><b>Born:</b> <?php $date = strtotime($row["born_date"]);
+                <p class="mb-0"><b><?php echo $languages[$x]["name"] ?>:</b> <?php echo $row["dog_name"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["gender"] ?>:</b> <?php echo $row["gender"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["breed"] ?>:</b> <?php echo $row["type"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["born"] ?>:</b> <?php $date = strtotime($row["born_date"]);
                echo $new_date = date('d. m. Y', $date); ?> <br></p>
-                <p class="mb-0"><b>Height:</b> <?php echo $row["height"]; ?> <br></p>
-                <p class="mb-0"><b>Weight:</b> <?php echo $row["weight"]; ?> <br></p>
-                <p class="pb-3"><b>Castration:</b> <?php echo $row["castration"]; ?> <br></p>
-                <p><b>Description:</b> <?php echo $row["dog_desc"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["height"] ?>:</b> <?php echo $row["height"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["weight"] ?>:</b> <?php echo $row["weight"]; ?> <br></p>
+                <p class="pb-3"><b><?php echo $languages[$x]["castration"] ?>:</b> <?php echo $row["castration"]; ?> <br></p>
+                <p><b><?php echo $languages[$x]["description"] ?>:</b> <?php echo $row["dog_desc"]; ?> <br></p>
               </div>
               <div class="container">
                 <div class="row mx-2">
@@ -98,7 +66,7 @@ if(isset($_GET['ageselect'])){
                 </div>
             </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="delSrcList()" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" onclick="delSrcList()" data-dismiss="modal"><?php echo $languages[$x]["close"] ?></button>
               </div>
             </div>
           </div>
@@ -108,7 +76,7 @@ if(isset($_GET['ageselect'])){
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="supportModalLabel">Support <?php echo $row["dog_name"]; ?></h5>
+                        <h5 class="modal-title" id="supportModalLabel"><?php echo $languages[$x]["support_modal_title"].' '.$row["dog_name"]; ?></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -119,52 +87,52 @@ if(isset($_GET['ageselect'])){
                             <input type="hidden" class="form-control" name="dog_id" value="<?php echo $row["dog_id"];?>" placeholder="<?php echo $row["dog_name"]; ?>">
                           </div>
                           <div class="form-group">
-                            <label for="error1">Your Full Name</label>
+                            <label for="error1"><?php echo $languages[$x]["your_full_name"] ?></label>
                             <input type="text" class="form-control" name="support_name" placeholder="Your Name" id="error1" required>
                             <div class="invalid-feedback">
-                            Please provide a name.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="error2">Email address</label>
+                            <label for="error2">Email</label>
                             <input type="email" class="form-control" name="support_email" placeholder="name@example.com" id="error2" required>
                             <div class="invalid-feedback">
-                            Please provide an email address.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="error3">ZIP</label>
+                            <label for="error3"><?php echo $languages[$x]["ZIP"] ?></label>
                             <input type="number" class="form-control" name="support_zip" placeholder="ZIP of city" id="error3" required>
                             <div class="invalid-feedback">
-                            Please provide a ZIP.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="error4">City</label>
+                            <label for="error4"><?php echo $languages[$x]["city"] ?></label>
                             <input type="text" class="form-control" name="support_city" placeholder="City" id="error4" required>
                             <div class="invalid-feedback">
-                            Please provide a city name.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="error5">Street</label>
+                            <label for="error5"><?php echo $languages[$x]["street"] ?></label>
                             <input type="text" class="form-control" name="support_street" placeholder="Street 23" id="error5" required>
                             <div class="invalid-feedback">
-                            Please provide a street name.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="error6">Phone Number</label>
+                            <label for="error6">Telephone</label>
                             <input type="text" class="form-control" name="support_tel" placeholder="01 234 567" id="error6" required>
                             <div class="invalid-feedback">
-                            Please provide a phone number.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
-                          <input class="btn btn-success" type="submit" value="Support" name="support_dog" />
+                          <input class="btn btn-success" type="submit" value="<?php echo $languages[$x]["support_btn"] ?>" name="support_dog" />
                         </form>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $languages[$x]["close"] ?></button>
                       </div>
                     </div>
                   </div>
@@ -174,7 +142,7 @@ if(isset($_GET['ageselect'])){
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="adoptModalLabel">Adopt <?php echo $row["dog_name"]; ?></h5>
+                        <h5 class="modal-title" id="adoptModalLabel"><?php echo $languages[$x]["adopt_modal_title"].' '.$row["dog_name"]; ?></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -185,64 +153,64 @@ if(isset($_GET['ageselect'])){
                             <input type="hidden" class="form-control" name="dog_id" value="<?php echo $row["dog_id"];?>" placeholder="<?php echo $row["dog_name"]; ?>">
                           </div>
                           <div class="form-group">
-                            <label for="error1">Full Name</label>
+                            <label for="error1"><?php echo $languages[$x]["your_full_name"] ?></label>
                             <input type="text" class="form-control" name="adopt_name" placeholder="Your Name" id="error1" required>
                             <div class="invalid-feedback">
-                            Please provide a name.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label >Kind of keeping</label>
+                            <label ><?php echo $languages[$x]["kind_of_keeping"] ?></label>
                             <select name="kind" class="form-control">
-                              <option value="inside">Inside</option>
-                              <option value="inside & outside">Inside & Outside</option>
-                              <option value="outside">Outside</option>
+                              <option value="inside"><?php echo $languages[$x]["inside"] ?></option>
+                              <option value="inside & outside"><?php echo $languages[$x]["in_out"] ?></option>
+                              <option value="outside"><?php echo $languages[$x]["outside"] ?></option>
                             </select>
                           </div>
                           <div class="form-group">
-                            <label >Other pets in the household</label>
+                            <label ><?php echo $languages[$x]["other_pets"] ?></label>
                             <select  name="other1" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
+                              <option value="yes"><?php echo $languages[$x]["yes"] ?></option>
+                              <option value="no"><?php echo $languages[$x]["no"] ?></option>
                             </select>
                           </div>
                           <div class="form-group">
-                            <label  for="error2">Other pets in the household</label>
+                            <label  for="error2"><?php echo $languages[$x]["other_pets2"] ?></label>
                             <input type="text" class="form-control" name="other2" placeholder="2 friendly dogs" id="error2" required>
                             <div class="invalid-feedback">
-                            Please provide an answer.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label  for="error3">Email address</label>
+                            <label  for="error3">Email</label>
                             <input type="email" class="form-control" name="adopt_email" placeholder="name@example.com" id="error3" required>
                             <div class="invalid-feedback">
-                            Please provide an email address.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label  for="error4">Address</label>
+                            <label  for="error4"><?php echo $languages[$x]["address"] ?></label>
                             <input type="text" class="form-control" name="adopt_address" placeholder="1234 City Street 12" id="error4" required>
                             <div class="invalid-feedback">
-                            Please provide an address.
+                            <?php echo $languages[$x]["provide_value"] ?>.
                             </div>
                           </div>
                           <div class="form-group">
-                            <label  for="error5">Phone Number 1</label>
+                            <label  for="error5">Telephone 1 </label>
                             <input type="text" class="form-control" name="adopt_tel1" placeholder="01 234 567" id="error5" required>
                             <div class="invalid-feedback">
-                            Please provide a phone number.
+                            <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label >Phone Number 2 (optional)</label>
+                            <label >Telephone (<?php echo $languages[$x]["optional"] ?>)</label>
                             <input type="text" class="form-control" name="adopt_tel2" placeholder="01 234 567">
                           </div>
-                          <input class="btn btn-success" type="submit" value="Adopt" name="adopt_dog" />
+                          <input class="btn btn-success" type="submit" value="<?php echo $languages[$x]["adopt_btn"] ?>" name="adopt_dog" />
                         </form>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $languages[$x]["close"] ?></button>
                       </div>
                     </div>
                   </div>

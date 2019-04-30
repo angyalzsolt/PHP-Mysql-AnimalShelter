@@ -24,28 +24,28 @@ if (isset($_SESSION['userUid']))
             <label for="validationCustom01"><?php echo $languages[$x]["name_pr"] ?> </label>
             <input type="text" id="validationCustom01" class="form-control" name="name" required>
             <div class="invalid-feedback">
-              Please provide a valid name.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="validationCustom02"><?php echo $languages[$x]["price"] ?></label>
             <input type="number"  id="validationCustom02" class="form-control" name="price" required>
             <div class="invalid-feedback">
-              Please provide a valid number.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="validationCustom03"><?php echo $languages[$x]["end_auct"] ?></label>
             <input type="date"  id="validationCustom03" class="form-control" name="edate" required>
             <div class="invalid-feedback">
-              Please provide a valid date.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="validationCustom04"><?php echo $languages[$x]["up_desc"] ?></label>
             <input type="text"  id="validationCustom04" class="form-control" name="desc" required>
             <div class="invalid-feedback">
-              Please provide a valid description.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">

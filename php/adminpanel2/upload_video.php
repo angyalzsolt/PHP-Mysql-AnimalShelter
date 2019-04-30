@@ -36,17 +36,17 @@ background-color: red;
             <label for="validationCustom01">Title</label>
             <input type="text" id="validationCustom01" class="form-control" name="title" required>
             <div class="invalid-feedback">
-              Please provide a title.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group ">
             <label for="validationCustom02"><p><span class="grey">URL : Please copy just this part as in example: https://www.youtube.com/watch?v=</span><span class="red">8j741TUIET0</span></p></label>
             <input type="text"  id="validationCustom02" class="form-control" name="url" required>
             <div class="invalid-feedback">
-              Please provide a url.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
-          <input class="btn btn-warning"" type="submit" value="Next" name="upload_video" />
+          <input class="btn btn-warning" type="submit" value="Next" name="upload_video" />
         </form>
   </div>
 </div>

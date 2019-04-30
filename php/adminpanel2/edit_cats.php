@@ -43,7 +43,7 @@ $results = mysqli_query($conn, "SELECT * FROM cat");
   <thead>
     <tr>
       <th><?php echo $languages[$x]["up_id"] ?></th>
-      <th>evidence ID</th>
+      <th><?php echo $languages[$x]["evidence_id"] ?></th>
       <th><?php echo $languages[$x]["up_name"] ?></th>
       <th><?php echo $languages[$x]["up_post_date"] ?></th>
       <th><?php echo $languages[$x]["up_born"] ?></th>
@@ -84,18 +84,18 @@ $results = mysqli_query($conn, "SELECT * FROM cat");
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel"><?php echo $languages[$x]["modal_title"] ?></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>Are you really want to delete this cat?</p>
-              <p>Name: <?php echo $row['cat_name'] ?></p>
-              <p>Type: <?php echo $row['type'] ?></p>
+              <p><?php echo $languages[$x]["modal_question"] ?></p>
+              <p><?php echo $languages[$x]["up_name"] ?>: <?php echo $row['cat_name'] ?></p>
+              <p><?php echo $languages[$x]["up_type"] ?>: <?php echo $row['type'] ?></p>
             </div>
             <div class="modal-footer">
-              <a href="edit_cats.php?del=<?php echo $row['cat_id'] ?>" class="btn btn-danger">Delete</a>
+              <a href="edit_cats.php?del=<?php echo $row['cat_id'] ?>" class="btn btn-danger"><?php echo $languages[$x]["up_del_btn"] ?></a>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>

@@ -1,7 +1,6 @@
 <?php 
 session_start();
 include("includes_admin/dbh.inc.php");
-
 include("includes_admin/output_verify_adopter.inc.php");
        $sql2 = "SELECT * FROM supporter
                 LEFT JOIN cat ON supporter.fk_cat_id = cat.cat_id 
@@ -91,7 +90,7 @@ if (!isset($_SESSION['userUid']))
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <ul class="dropdown-menu-over list-unstyled">
-                    <li class="header-ul text-center">You have <?php echo $nrows2+$nrows3+$nrows; ?> notifications</li>
+                    <li class="header-ul text-center"><?php echo $languages[$x]["you_have"] ?> <?php echo $nrows2+$nrows3+$nrows; ?> <?php echo $languages[$x]["notif"] ?></li>
                     <li>
                       <!-- inner menu: contains the actual data -->
                         <ul class='menu list-unstyled'>

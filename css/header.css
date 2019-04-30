@@ -175,3 +175,26 @@ img::-moz-selection {
 #paypal_img{
   width: 50px;
 }
+
+.lang-btn-group {
+  width: 220px;
+  margin-left: 200px;
+  color: black;
+  font-size: 15px;
+}
+.lang-btn-group span {
+  margin-left: 7px;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+  margin-left: 7px;
+  cursor: pointer;
+  transition: color .3s;
+}
+.lang-btn:hover {
+  color: red;
+}

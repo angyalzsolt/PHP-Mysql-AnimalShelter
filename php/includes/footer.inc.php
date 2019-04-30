@@ -10,60 +10,51 @@
 <div class="container bottom_border">
 <div class="row">
 <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Visit us</h5>
+<h5 class="headin5_amrc col_white_amrc pt2"><?php echo $languages[$x]["visit_us"] ?></h5>
 <!--headin5_amrc-->
-<p class="mb10">
-
-November - February: 8:00-16:00</br>
-March, April: 8:00-17:00</br>
-May - August: 8:00-17:00</br>
-Saturday, Sunday 8:00-19:00</br>
-September, October: 8:00-17:00</br></br>
-Walks with dogs after 13:00! </br></br>
-
-We are open 365 days a year!</p>
+<p class="mb10"><?php echo $languages[$x]["footer_open"] ?></p>
 </div>
 
 
 <div class=" col-sm-4 col-md  col-6 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+<h5 class="headin5_amrc col_white_amrc pt2"><?php echo $languages[$x]["quick_links"] ?></h5>
 <!--headin5_amrc-->
 <ul class="footer_ul_amrc">
-<li><a href="ourmission.php"><i class="fas fa-angle-right"></i> Our mission</a></li>
-<li><a href="team_page.php"><i class="fas fa-angle-right"></i> Our team</a></li>
-<li><a href="sponsors.php"><i class="fas fa-angle-right"></i> Sponsors</a></li>
-<li><a href="gallary.php"><i class="fas fa-angle-right"></i> Shelter</a></li>
-<li><a href="reports.php"><i class="fas fa-angle-right"></i> Reports</a></li>
-<li><a href="contact.php"><i class="fas fa-angle-right"></i> Contact us</a></li>
+<li><a href="ourmission.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["OUR_MISSION"])) ?></a></li>
+<li><a href="team_page.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["OUR_TEAM"])) ?></a></li>
+<li><a href="sponsors.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["SPONSORS"])) ?></a></li>
+<li><a href="gallary.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["GALLERY"])) ?></a></li>
+<li><a href="reports.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["REPORTS"])) ?></a></li>
+<li><a href="contact.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["CONTACT"])) ?></a></li>
 </ul>
 <!--footer_ul_amrc ends here-->
 </div>
 
 
 <div class=" col-sm-4 col-md  col-6 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+<h5 class="headin5_amrc col_white_amrc pt2"><?php echo $languages[$x]["quick_links"] ?></h5>
 <!--headin5_amrc-->
 <ul class="footer_ul_amrc">
-<li><a href="dogs.php"><i class="fas fa-angle-right"></i> Dogs</a></li>
-<li><a href="cats.php"><i class="fas fa-angle-right"></i> Cats</a></li>
-<li><a href="search.php"><i class="fas fa-angle-right"></i> Search</a></li>
-<li><a href="adoption.php"><i class="fas fa-angle-right"></i> Adopt</a></li>
-<li><a href="support.php"><i class="fas fa-angle-right"></i> Support</a></li>
-<li><a href="adopted.php"><i class="fas fa-angle-right"></i> In Happy Home</a></li>
-<li><a href="in_memoriam.php"><i class="fas fa-angle-right"></i> In memoriam</a></li>
+<li><a href="dogs.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["DOGS"])) ?></a></li>
+<li><a href="cats.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["CATS"])) ?></a></li>
+<li><a href="search.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["SEARCH"])) ?></a></li>
+<li><a href="adoption.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["ADOPT"])) ?></a></li>
+<li><a href="support.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["SUPPORT"])) ?></a></li>
+<li><a href="adopted.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["IN_HAPPY_HOME"])) ?></a></li>
+<li><a href="in_memoriam.php"><i class="fas fa-angle-right"></i> <?php echo ucfirst(mb_strtolower($languages[$x]["IN_MEMORIAM"])) ?></a></li>
 </ul>
 <!--footer_ul_amrc ends here-->
 </div>
 
 
 <div class=" col-sm-4 col-md  col-12 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Where to find us?</h5>
+<h5 class="headin5_amrc col_white_amrc pt2"><?php echo $languages[$x]["footer_find"] ?></h5>
 <!--headin5_amrc ends here-->
 
 <ul class="footer_ul2_amrc">
-<p><i class="fa fa-location-arrow"></i> Priemyselná 12a, Piešťany, Slovakia </p>
-<p><i class="fa fa-phone"></i>  Tel: 00421 904170913 We speak German!</p>
-<p><i class="fa fa fa-envelope"></i> utulok@utulok-piestany.sk  </p>
+<p><i class="fa fa-location-arrow"></i> <?php echo $languages[$x]["footer_row1"] ?></p>
+<p><i class="fa fa-phone"></i> <?php echo $languages[$x]["footer_row2"] ?></p>
+<p><i class="fa fa fa-envelope"></i> <?php echo $languages[$x]["footer_row3"] ?></p>
 </ul>
 <!--footer_ul2_amrc ends here-->
 </div>

@@ -14,7 +14,7 @@ include("includes/output_adopted.inc.php");
 <div class="container">
 	<div class="row">
 		<div class="col-10 offset-1">
-			<h1>Adopted</h1>
+			<h1><?php echo $languages[$x]["adopted_title"] ?></h1>
 			<hr>
 		</div>
 		<div class="col-10 offset-1">
@@ -26,7 +26,7 @@ include("includes/output_adopted.inc.php");
 						<img class="imag" src="../image_upload/<?php echo $row["main_image"]; ?>" onerror="this.src = '../img/no-image.jpg';" alt="">
 						<div class="buttons_div">
 							<button class="btn btn-success mb-2 btn-block buttons"  data-backdrop="static" data-keyboard="false" onclick="getImgSrc('moreModal'+<?php echo $row["id"] ?>)"  type="button" data-toggle="modal" data-target="#moreModal<?php
-                echo $row["id"];?>">More..</button>
+                echo $row["id"];?>"><?php echo $languages[$x]["more"] ?></button>
 						</div>
 					</div>
 				</div>				
@@ -41,17 +41,17 @@ include("includes/output_adopted.inc.php");
                 </button>
               </div>
               <div class="modal-body">
-                <p class="mb-0"><b>Name:</b> <?php echo $row["name"]; ?> <br></p>
-                <p class="mb-0"><b>Adopted on:</b> <?php $date2 = strtotime($row["req_date"]);
+                <p class="mb-0"><b><?php echo $languages[$x]["name"] ?>:</b> <?php echo $row["name"]; ?> <br></p>
+                <p class="mb-0"><b>Adopted on:</b> <?php $date2 = strtotime($row["post_date"]);
                echo $new_date = date('d. m. Y', $date2); ?> <br></p>
-                <p class="mb-0"><b>Gender:</b> <?php echo $row["gender"]; ?> <br></p>
-                <p class="mb-0"><b>Type:</b> <?php echo $row["type"]; ?> <br></p>
-                <p class="mb-0"><b>Born:</b> <?php $date = strtotime($row["born_date"]);
+                <p class="mb-0"><b><?php echo $languages[$x]["gender"] ?>:</b> <?php echo $row["gender"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["breed"] ?>:</b> <?php echo $row["type"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["born"] ?>:</b> <?php $date = strtotime($row["born_date"]);
                echo $new_date = date('d. m. Y', $date); ?> <br></p>
-                <p class="mb-0"><b>Height:</b> <?php echo $row["height"]; ?> <br></p>
-                <p class="mb-0"><b>Weight:</b> <?php echo $row["weight"]; ?> <br></p>
-                <p class="pb-3"><b>Castration:</b> <?php echo $row["castration"]; ?> <br></p>
-                <p><b>Description:</b> <?php echo $row["desc"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["height"] ?>:</b> <?php echo $row["height"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["weight"] ?>:</b> <?php echo $row["weight"]; ?> <br></p>
+                <p class="pb-3"><b><?php echo $languages[$x]["castration"] ?>:</b> <?php echo $row["castration"]; ?> <br></p>
+                <p><b><?php echo $languages[$x]["description"] ?>:</b> <?php echo $row["desc"]; ?> <br></p>
               </div>
               <div class="container">
                 <div class="row mx-2">
@@ -66,7 +66,7 @@ include("includes/output_adopted.inc.php");
                 </div>
             </div>
               <div class="modal-footer">
-                <button type="button"  onclick="delSrcList()"  class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button"  onclick="delSrcList()"  class="btn btn-secondary" data-dismiss="modal"><?php echo $languages[$x]["close"] ?></button>
               </div>
             </div>
           </div>
@@ -94,31 +94,6 @@ include("includes/output_adopted.inc.php");
       ?>
        <a href="adopted.php?char=<?php echo chr($i) ?>" class="mb-1 btn btn-warning"><?php echo chr($i) ?></a>
      <?php }; ?>
-      <!--  <a href="adopted.php?char=B" class="mb-1 btn btn-warning">B</a>
-       <a href="adopted.php?char=C" class="mb-1 btn btn-warning">C</a>
-       <a href="adopted.php?char=D" class="mb-1 btn btn-warning">D</a>
-       <a href="adopted.php?char=E" class="mb-1 btn btn-warning">E</a>
-       <a href="adopted.php?char=F" class="mb-1 btn btn-warning">F</a>
-       <a href="adopted.php?char=G" class="mb-1 btn btn-warning">G</a>
-       <a href="adopted.php?char=H" class="mb-1 btn btn-warning">H</a>
-       <a href="adopted.php?char=I" class="mb-1 btn btn-warning">I</a>
-       <a href="adopted.php?char=J" class="mb-1 btn btn-warning">J</a>
-       <a href="adopted.php?char=K" class="mb-1 btn btn-warning">K</a>
-       <a href="adopted.php?char=L" class="mb-1 btn btn-warning">L</a>
-       <a href="adopted.php?char=M" class="mb-1 btn btn-warning">M</a>
-       <a href="adopted.php?char=N" class="mb-1 btn btn-warning">N</a>
-       <a href="adopted.php?char=O" class="mb-1 btn btn-warning">O</a>
-       <a href="adopted.php?char=P" class="mb-1 btn btn-warning">P</a>
-       <a href="adopted.php?char=Q" class="mb-1 btn btn-warning">Q</a>
-       <a href="adopted.php?char=R" class="mb-1 btn btn-warning">R</a>
-       <a href="adopted.php?char=S" class="mb-1 btn btn-warning">S</a>
-       <a href="adopted.php?char=T" class="mb-1 btn btn-warning">T</a>
-       <a href="adopted.php?char=U" class="mb-1 btn btn-warning">U</a>
-       <a href="adopted.php?char=V" class="mb-1 btn btn-warning">V</a>
-       <a href="adopted.php?char=W" class="mb-1 btn btn-warning">W</a>
-       <a href="adopted.php?char=X" class="mb-1 btn btn-warning">X</a>
-       <a href="adopted.php?char=Y" class="mb-1 btn btn-warning">Y</a>
-       <a href="adopted.php?char=Z" class="mb-1 btn btn-warning">Z</a> -->
        <h4 class="mt-4">Filter by date of born</h4>
        <form action="" method="get" >
          <div class="form-group">
@@ -129,17 +104,6 @@ include("includes/output_adopted.inc.php");
              ?>
             <option value="<?php echo $i<10? '0'.$i : $i ?>"><?php echo $i ?></option>
             <?php }; ?>
-            <!-- <option value="02">2</option>
-            <option value="03">3</option>
-            <option value="04">4</option>
-            <option value="05">5</option>
-            <option value="06">6</option>
-            <option value="07">7</option>
-            <option value="08">8</option>
-            <option value="09">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option> -->
           </select>
         </div>
         <div class="form-group">
@@ -150,28 +114,9 @@ include("includes/output_adopted.inc.php");
              ?>
             <option value="<?php echo $i ?>"><?php echo $i ?></option>
           <?php }; ?>
-<!--             <option value="2001">2001</option>
-            <option value="2002">2002</option>
-            <option value="2003">2003</option>
-            <option value="2004">2004</option>
-            <option value="2005">2005</option>
-            <option value="2006">2006</option>
-            <option value="2007">2007</option>
-            <option value="2008">2008</option>
-            <option value="2009">2009</option>
-            <option value="2010">2010</option>
-            <option value="2011">2011</option>
-            <option value="2012">2012</option>
-            <option value="2013">2013</option>
-            <option value="2014">2014</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option> -->
           </select>
         </div>
-        <input class="btn btn-warning"" type="submit" value="Filter" name="filter_date" />
+        <input class="btn btn-warning" type="submit" value="Filter" name="filter_date" />
        </form><br> 
        <a href="adopted.php?nochar" class="mb-1 btn btn-warning">No filter</a>
     </div>

@@ -22,7 +22,7 @@ require_once 'includes_admin/upload_info.inc.php';
             <label for="validationCustom01"><?php echo $languages[$x]["edit_title"] ?>:</label>
             <input type="text" id="validationCustom01" class="form-control" name="title" required>
             <div class="invalid-feedback">
-              Please provide a valid title.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
@@ -30,10 +30,10 @@ require_once 'includes_admin/upload_info.inc.php';
            
             <textarea class="form-control" id="validationCustom03" type="text" name="text"  rows="18" required></textarea>
             <div class="invalid-feedback">
-              Please provide a valid text.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
-          <input class="btn btn-warning"" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_info" />
+          <input class="btn btn-warning" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_info" />
         </form>
   </div>
 </div>

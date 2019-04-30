@@ -9,35 +9,35 @@ include("includes/dbh.inc.php");
 <div class="container">
       <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-weight-bold">Search for a specified pet?</h1>
+          <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["search_title"] ?></h1>
         </div>
       </div>
 <div class="row">
   <div class="col-12">
     <form class="" action="search_result.php" method="GET">
         <div class="form-group">
-          <label>Select type of pet</label>
+          <label><?php echo $languages[$x]["select_type"] ?></label>
           <select name="animal" class="form-control" id="exampleFormControlSelect1">
-            <option value="dog">dog</option>
-            <option value="cat">cat</option>
+            <option value="dog"><?php echo $languages[$x]["dog"] ?></option>
+            <option value="cat"><?php echo $languages[$x]["cat"] ?></option>
           </select>
         </div>
         <div class="form-group">
-          <label >Select gender</label>
+          <label ><?php echo $languages[$x]["select_gender"] ?></label>
           <select name="gender" class="form-control" id="exampleFormControlSelect1">
-            <option value="male">male</option>
-            <option value="female">female</option>
+            <option value="male"><?php echo $languages[$x]["male"] ?></option>
+            <option value="female"><?php echo $languages[$x]["female"] ?></option>
           </select>
         </div>
         <div class="form-group">
-          <label >Castration</label>
+          <label ><?php echo $languages[$x]["castration"] ?></label>
           <select name="castr" class="form-control" id="exampleFormControlSelect1">
-            <option value="yes">yes</option>
-            <option value="no">no</option>
+            <option value="yes"><?php echo $languages[$x]["yes"] ?></option>
+            <option value="no"><?php echo $languages[$x]["no"] ?></option>
           </select>
         </div>
         <div class="form-group mb-4">
-          <label >Select Age</label>
+          <label ><?php echo $languages[$x]["select_age"] ?></label>
           <select name="date" class="form-control" id="exampleFormControlSelect1">
             <option value="2018-01-01">< 1 </option>
             <option value="2017-01-01">< 2 </option>
@@ -52,7 +52,7 @@ include("includes/dbh.inc.php");
             <option value="1999-01-01">< 20 </option>
           </select>
         </div>
-        <input class="mt-4 btn btn-primary btn-block" type="submit" value="Search" name="search" />
+        <input class="mt-4 btn btn-primary btn-block" type="submit" value="<?php echo $languages[$x]['search'] ?>" name="search" />
       </form>
   </div>
 </div>

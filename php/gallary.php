@@ -8,7 +8,7 @@ $newarray = $result->fetch_all(MYSQLI_ASSOC);
 <link rel="stylesheet" type="text/css" href="../css/gallery.css">
 <div id='main' class='containerr pb-5 pt-5'>
     <div class="col-md-12 mb-4">
-      <h1 class="text-center"> Our Place</h1>
+      <h1 class="text-center"><?php echo $languages[$x]["our_place"] ?></h1>
     </div>
   <?php foreach ($newarray as $key) { ?>
     <a data-toggle="modal"  style="cursor: pointer;" data-target="#imageModal<?php echo $key["place_id"];?>"><img src="../image_upload/<?php echo $key['url'] ?>" onerror="this.src = '../img/no-image.png'" class='img-thumbnail make_bigger mb-4' alt='Cinque Terre'></a>
@@ -16,7 +16,7 @@ $newarray = $result->fetch_all(MYSQLI_ASSOC);
       <div class="modal-dialog image_modal modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Image</h5>
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -25,7 +25,7 @@ $newarray = $result->fetch_all(MYSQLI_ASSOC);
             <img src='../image_upload/<?php echo $key['url'] ?>' class='img-large make_bigger' alt='Cinque Terre'>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $languages[$x]["close"] ?></button>
           </div>
         </div>
       </div>

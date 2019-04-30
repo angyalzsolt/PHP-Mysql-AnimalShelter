@@ -14,7 +14,7 @@ if(isset($_POST['adopt_cat'])) {
   VALUES ('$adopt_name','$kind','$other1','$other2','$adopt_email','$adopt_address','$adopt_tel1','$adopt_tel2','$fk_cat_id',2)";
   if (mysqli_query($conn, $sql)) {
    echo "<br><br><br><br><div class='mt-4 alert alert-success alert-dismissible fade show' role='alert'>
-          <strong>Thank you, your adopton request has been sent successfully! We will contact you soon.</strong>
+          <strong>".$languages[$x]["adopt_msg"]."</strong>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
             <span aria-hidden='true'>&times;</span>
           </button>
@@ -45,7 +45,7 @@ if(isset($_POST['adopt_dog'])) {
   VALUES ('$adopt_name','$kind','$other1','$other2','$adopt_email','$adopt_address','$adopt_tel1','$adopt_tel2','$fk_dog_id',2)";
   if (mysqli_query($conn, $sql)) {
   echo "<br><br><br><br><div class='mt-4 alert alert-success alert-dismissible fade show' role='alert'>
-          <strong>Thank you, your adopton request has been sent successfully! We will contact you soon.</strong>
+          <strong>".$languages[$x]["adopt_msg"]."</strong>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
             <span aria-hidden='true'>&times;</span>
           </button>

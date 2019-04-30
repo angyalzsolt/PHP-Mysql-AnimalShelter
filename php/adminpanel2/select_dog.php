@@ -36,7 +36,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
               <?php } ?>
               </select>
             </div>
-            <input class="btn btn-warning"" type="submit" value="<?php echo $languages[$x]["select"] ?>" name="select_dog" />
+            <input class="btn btn-warning" type="submit" value="<?php echo $languages[$x]["select"] ?>" name="select_dog" />
           </form>
         </div>
 		</div>

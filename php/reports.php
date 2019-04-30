@@ -60,10 +60,10 @@ $row2 = $res->fetch_all(MYSQLI_ASSOC);
 <div class="container">
     <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-weight-bold">Reports</h1><br>
-          <a class="btn btn-success btn-lg" href="search_reports.php" role="button">Search..</a>
-          <a class="ml-3 btn btn-secondary btn-lg" href="annual_reports.php" role="button">Annual Reports</a> <br>
-          <a class="ml-3 mt-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/index.php?s=1&u=6&do=archive&lang" role="button">Archive SK</a>
+          <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["reports_title"] ?></h1><br>
+          <a class="btn btn-success btn-lg" href="search_reports.php" role="button"><?php echo $languages[$x]["search"] ?></a>
+          <a class="ml-3 btn btn-secondary btn-lg" href="annual_reports.php" role="button"><?php echo $languages[$x]["annual_reports"] ?></a> <br>
+          <a class="ml-3 mt-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/index.php?s=1&u=6&do=archive&lang" role="button"><?php echo $languages[$x]["archive_sk"] ?></a>
           <a class="ml-3 mt-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/index.php?s=1&u=6&do=archive&lang=GER" role="button">Archive DE</a>
 
       </div>
@@ -84,7 +84,7 @@ $row2 = $res->fetch_all(MYSQLI_ASSOC);
                             <h2 class="card-title"><?php echo $row['name'] ?></h2>
                             <p class="card-text text-justify text str"><?php echo substr($row['reports_descriptions'], 0, 250) ?>...</p>
                             <form id="single" action='report.php' method='get' >
-                                <button class="btn warningg mt-4" type="submit" name='id' value="<?php echo $row['reports_id'] ?>">Read more..</button>  
+                                <button class="btn warningg mt-4" type="submit" name='id' value="<?php echo $row['reports_id'] ?>"><?php echo $languages[$x]["read_more"] ?></button>  
                             </form> 
                         </div>
                     </div>
@@ -101,7 +101,7 @@ $row2 = $res->fetch_all(MYSQLI_ASSOC);
                             <h2 class="card-title"><?php echo $row['name'] ?></h2>
                             <p class="card-text text-justify text str"><?php echo substr($row['reports_descriptions'], 0, 250) ?>...</p>
                             <form id="single" action='report.php' method='get' >
-                                <button class="btn warningg" type="submit" name='id' value="<?php echo $row['reports_id'] ?>">Read more..</button>  
+                                <button class="btn warningg" type="submit" name='id' value="<?php echo $row['reports_id'] ?>"><?php echo $languages[$x]["read_more"] ?></button>  
                             </form>
                         </div>
                     </div>
@@ -130,7 +130,7 @@ $row2 = $res->fetch_all(MYSQLI_ASSOC);
         $curPage = $_GET['page'];
       }
       echo "
-<p style='float:left; padding-right:15px;'>Page " . $curPage . " out of " . $number_of_pages . "</p>";
+<p style='float:left; padding-right:15px;'>".$languages[$x]["page"]. " " . $curPage . " ".$languages[$x]["out_of"]." " . $number_of_pages . "</p>";
     ?>
 </div></div></div>
   </div>

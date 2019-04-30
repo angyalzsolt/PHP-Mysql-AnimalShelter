@@ -1,5 +1,6 @@
 <?php 
 include("dbh.inc.php");
+include("front_config.php");
 $output='';
 $sql= "SELECT * FROM reports LEFT JOIN reports_image ON reports.reports_id = reports_image.fk_reports_id WHERE keywords LIKE '%".$_POST["search"]."%'";
 $result=mysqli_query($conn,$sql);
@@ -12,14 +13,14 @@ if (mysqli_num_rows($result)>0)  {
             <div class='card col-md-12 p-3 mb-4'>
                 <div class='row '>
                     <div class='col-md-4'>
-                        <img class='w-100 imag' src='../image_upload/".$row["reports_image"]."'>
+                        <img class='w-100 imag' src='../image_upload/reports_image/".$row["reports_image"]."'>
                     </div>
                     <div class='col-md-8'>
                         <div class='card-block'>
                             <h6 class='card-title'>".$row["name"]."</h6>
                             <p class='card-text text-justify text str'>".$row["reports_descriptions"]."</p>
                             <form id='single' action='report.php' method='get' >
-                                <button class='btn btn-info' type='submit' name='id' value='".$row["reports_id"]."'>Read more..</button>  
+                                <button class='btn btn-info' type='submit' name='id' value='".$row["reports_id"]."'>". $languages[$x]["read_more"] ."</button>  
                             </form> 
                         </div>
                     </div>

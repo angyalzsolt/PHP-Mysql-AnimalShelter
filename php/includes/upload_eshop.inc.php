@@ -3,7 +3,6 @@
 if(isset($_POST['buy_eshop'])) {
   $buy_name = mysqli_real_escape_string($conn,$_POST['buy_name']);
   $buy_email = mysqli_real_escape_string($conn,$_POST['buy_email']);
-  $buy_zip = mysqli_real_escape_string($conn,$_POST['buy_zip']);
   $buy_address = mysqli_real_escape_string($conn,$_POST['buy_address']);
   $buy_comment = mysqli_real_escape_string($conn,$_POST['buy_comment']);
   $buy_tel = mysqli_real_escape_string($conn,$_POST['buy_tel']);

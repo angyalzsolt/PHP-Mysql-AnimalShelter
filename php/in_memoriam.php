@@ -15,7 +15,8 @@ include("includes/output_in_memoriam.inc.php");
  
 	<div class="row">
 		<div class="col-10 offset-1">
-			<h1>In Memoriam...</h1>
+			<h1><?php echo $languages[$x]["inmemoriam_title"] ?></h1>
+      <p><i><?php echo $languages[$x]["inmemoriam_subtitle"] ?></i></p>
 			<hr>
 		</div>   
 		<div class="col-10 offset-1">
@@ -27,7 +28,7 @@ include("includes/output_in_memoriam.inc.php");
 						<img class="imag" src="../image_upload/<?php echo $row["main_image"]; ?>" onerror="this.src = '../img/no-image.jpg';" alt="">
 						<div class="buttons_div">
 							<button class="btn btn-success mb-2 btn-block buttons"  data-backdrop="static" data-keyboard="false" onclick="getImgSrc('moreModal'+<?php echo $row["dog_id"];?>)"  type="button" data-toggle="modal" data-target="#moreModal<?php
-                echo $row["dog_id"];?>">More..</button>
+                echo $row["dog_id"];?>"><?php echo $languages[$x]["more"] ?></button>
 						</div>
 					</div>
 				</div>
@@ -42,15 +43,15 @@ include("includes/output_in_memoriam.inc.php");
                 </button>
               </div>
               <div class="modal-body">
-                <p class="mb-0"><b>Name:</b> <?php echo $row["dog_name"]; ?> <br></p>
-                <p class="mb-0"><b>Gender:</b> <?php echo $row["gender"]; ?> <br></p>
-                <p class="mb-0"><b>Type:</b> <?php echo $row["type"]; ?> <br></p>
-                <p class="mb-0"><b>Born:</b> <?php $date = strtotime($row["born_date"]);
+                <p class="mb-0"><b><?php echo $languages[$x]["name"] ?>:</b> <?php echo $row["dog_name"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["gender"] ?>:</b> <?php echo $row["gender"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["breed"] ?>:</b> <?php echo $row["type"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["born"] ?>:</b> <?php $date = strtotime($row["born_date"]);
                echo $new_date = date('d. m. Y', $date); ?> <br></p>
-                <p class="mb-0"><b>Height:</b> <?php echo $row["height"]; ?> <br></p>
-                <p class="mb-0"><b>Weight:</b> <?php echo $row["weight"]; ?> <br></p>
-                <p class="pb-3"><b>Castration:</b> <?php echo $row["castration"]; ?> <br></p>
-                <p><b>Description:</b> <?php echo $row["dog_desc"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["height"] ?>:</b> <?php echo $row["height"]; ?> <br></p>
+                <p class="mb-0"><b><?php echo $languages[$x]["weight"] ?>:</b> <?php echo $row["weight"]; ?> <br></p>
+                <p class="pb-3"><b><?php echo $languages[$x]["castration"] ?>:</b> <?php echo $row["castration"]; ?> <br></p>
+                <p><b><?php echo $languages[$x]["description"] ?>:</b> <?php echo $row["dog_desc"]; ?> <br></p>
               </div>
               <div class="container">
                 <div class="row mx-2">
@@ -65,7 +66,7 @@ include("includes/output_in_memoriam.inc.php");
                 </div>
             </div>
               <div class="modal-footer">
-                <button type="button" onclick="delSrcList()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" onclick="delSrcList()" class="btn btn-secondary" data-dismiss="modal"><?php echo $languages[$x]["close"] ?></button>
               </div>
             </div>
           </div>
@@ -113,7 +114,7 @@ include("includes/output_in_memoriam.inc.php");
           <?php }; ?>
           </select>
         </div>
-        <input class="btn btn-warning"" type="submit" value="Filter" name="filter_date" />
+        <input class="btn btn-warning" type="submit" value="Filter" name="filter_date" />
        </form><br> 
        <a href="in_memoriam.php?nochar" class="mb-1 btn btn-warning">No filter</a>
     </div>

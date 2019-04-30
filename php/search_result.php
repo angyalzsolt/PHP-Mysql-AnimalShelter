@@ -1,7 +1,7 @@
 <?php 
 include("includes/navbar.inc.php");
 include("includes/dbh.inc.php");
-include("includes/output_search.inc.php");
+// include("includes/output_search.inc.php");
  ?>
 <link rel="stylesheet" type="text/css" href="../css/search.css">
 <div class="break">  
@@ -45,10 +45,10 @@ include("includes/output_search.inc.php");
           <div class="col-md-8 mb-3">
             <div class="card-block">
               <h1 class="card-title"><b><?php echo $row[''.$animal.'_name'] ?></b></h1>
-              <p class="card-text text-justify text str"><b>Type: </b><?php echo $row['type'] ?></p>
-              <p class="card-text text-justify text str"><b>Born: </b><?php $date = strtotime($row["born_date"]);
+              <p class="card-text text-justify text str"><b><?php echo $languages[$x]["breed"] ?>: </b><?php echo $row['type'] ?></p>
+              <p class="card-text text-justify text str"><b><?php echo $languages[$x]["born"] ?>: </b><?php $date = strtotime($row["born_date"]);
                echo $new_date = date('d. m. Y.', $date); ?></p>
-              <p class="card-text text-justify text str"><b>Description: </b><?php echo $row[''.$animal.'_desc'] ?></p>
+              <p class="card-text text-justify text str"><b><?php echo $languages[$x]["description"] ?>: </b><?php echo $row[''.$animal.'_desc'] ?></p>
             </div>
           </div>
            <div class="col-md-4"> <a href="<?php echo $animal ?>s.php">

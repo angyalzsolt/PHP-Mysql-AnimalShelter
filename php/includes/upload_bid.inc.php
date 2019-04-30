@@ -13,11 +13,10 @@ if(isset($_POST['make_bid'])) {
     $comment = mysqli_real_escape_string($conn,$_POST['comment']);
     $sql = "INSERT INTO auction_bid (nick_name,full_name,bid_price,email,address,telephone,comment,fk_auction_product_id )
     VALUES ('$nname','$fname','$bid','$email','$address','$tel','$comment','$product_id')";
-header("Location: ../auction.php?success");
     if (mysqli_query($conn, $sql)) {
    header("Location: ../auction.php?success");
  } else {
-   echo "Record creation error for: " . $sql . "\n" . mysqli_error($conn);
+   header("Location: ../auction_form.php?id=".$product_id."&error");;
  }
 }
  ?>

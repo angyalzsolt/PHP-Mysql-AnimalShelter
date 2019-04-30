@@ -3,6 +3,8 @@
 }
 h3, p {
 	text-align: center;
+  padding: 1px!important;
+  margin: 1px!important;
 }
 .backg2 {
   background-image: url(../img/adorable-animal-cat-1440387.jpg);

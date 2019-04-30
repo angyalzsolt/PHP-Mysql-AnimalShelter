@@ -1,4 +1,5 @@
 <?php setcookie('taxcookie', 'true', time() + 60*60*24  , "/");?>
+<?php   include("includes/front_config.php");  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +40,7 @@
  color: white;
 }
 </style>
+
 </head>
 <body id="page-top">
   <!-- Navigation -->
@@ -87,45 +89,45 @@ if(!isset($_COOKIE['taxcookie']) || $_COOKIE['taxcookie'] !== 'true') {
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              About us
+             <?php echo $languages[$x]["ABOUT_US"] ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="ourmission.php">Our Mission</a>
-              <a class="dropdown-item" href="team_page.php">Our Team</a>
-              <a class="dropdown-item" href="info.php">Important Info</a>
-              <a class="dropdown-item" href="sponsors.php">Sponsors</a>
-              <a class="dropdown-item" href="gallary.php">Gallery</a>
+              <a class="dropdown-item" href="ourmission.php"><?php echo $languages[$x]["OUR_MISSION"] ?></a>
+              <a class="dropdown-item" href="team_page.php"><?php echo $languages[$x]["OUR_TEAM"] ?></a>
+              <a class="dropdown-item" href="info.php"><?php echo $languages[$x]["IMPORTANT_INFO"] ?></a>
+              <a class="dropdown-item" href="sponsors.php"><?php echo $languages[$x]["SPONSORS"] ?></a>
+              <a class="dropdown-item" href="gallary.php"><?php echo $languages[$x]["GALLERY"] ?></a>
               
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dogs & Cats
+              <?php echo $languages[$x]["DOGS&CATS"] ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="dogs.php">Dogs</a>
-              <a class="dropdown-item" href="cats.php">Cats</a>
-              <a class="dropdown-item" href="search.php">Search</a>
-              <a class="dropdown-item" href="adoption.php">Adopt</a>
-              <a class="dropdown-item" href="support.php">Support</a>
-              <a class="dropdown-item" href="adopted.php">in Happy Home</a>
-              <a class="dropdown-item" href="in_memoriam.php">In Memoriam</a>
+              <a class="dropdown-item" href="dogs.php"><?php echo $languages[$x]["DOGS"] ?></a>
+              <a class="dropdown-item" href="cats.php"><?php echo $languages[$x]["CATS"] ?></a>
+              <a class="dropdown-item" href="search.php"><?php echo $languages[$x]["SEARCH"] ?></a>
+              <a class="dropdown-item" href="adoption.php"><?php echo $languages[$x]["ADOPT"] ?></a>
+              <a class="dropdown-item" href="support.php"><?php echo $languages[$x]["SUPPORT"] ?></a>
+              <a class="dropdown-item" href="adopted.php"><?php echo $languages[$x]["IN_HAPPY_HOME"] ?></a>
+              <a class="dropdown-item" href="in_memoriam.php"><?php echo $languages[$x]["IN_MEMORIAM"] ?></a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="reports.php">Reports</a>
+            <a class="nav-link js-scroll-trigger" href="reports.php"><?php echo $languages[$x]["REPORTS"] ?></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Other
+              <?php echo $languages[$x]["OTHER"] ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="eshop1.php">E-Shop</a>
-              <a class="dropdown-item" href="auction.php">Auction</a>
+              <a class="dropdown-item" href="eshop1.php"><?php echo $languages[$x]["E-SHOP"] ?></a>
+              <a class="dropdown-item" href="auction.php"><?php echo $languages[$x]["AUCTION"] ?></a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="contact.php"><?php echo $languages[$x]["CONTACT"] ?></a>
           </li>
           <li >
             <form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -138,7 +140,21 @@ if(!isset($_COOKIE['taxcookie']) || $_COOKIE['taxcookie'] !== 'true') {
             <a class="social_footer_ul" href="https://www.facebook.com/UtulokPiestany/?__tn__=kC-R&eid=ARDWhgRFE-NwY2LeRbqTMe-kOY5qmdRphrxqbh_R8AdGuYq52nICSjDcogk391G1Yfpj60Jxuu1qp8GD&hc_ref=ARStVqqzpg7amV2ebSI-brM3EKv3LAdyAyG0AAx8nW0gOZIoJSQ3GIKcOr-18UGwkPY&fref=nf&__xts__[0]=68.ARDRZk2Kxcg9hHP-mtRJeg3XAXYtVtXOSkEb68MUWALnCgwcKQ232KUWJ5uaDmthUgJCV580fbbYPiQ6GxPZSyv1g-DKFeP8iLfc5Gzs_COu9qDP09nnXfW8PEE0Q1HnKf5gvtyis5ecccKRkK4WZYqCZ2jWE2jI9EiAUUVk8xyaMhT7cg3jVj6uzaO2cHpJBI0LXxN91vK53mMDd8nAWTbTNtifyIwtwVR7CXx7RassZYOC3p3nSQ2LqxSdZEZ6L-FSxwrlIZWnszLu2dXPPTd4RvMl7a8vPxlAKpMnWA6RrobLp8IUb3JOEyqZdnEvDu6m0L6OC--lOrqjbwT5"><i class="fab fa-facebook fa-2x"></i></a>
           </li>
           
+          
         </ul>
+
+       
       </div>
+
     </div>
+       <div class="lang-btn-group">
+          <form method="post">
+            <input class="lang-btn" type="submit" name="eng" value="ENG">
+            <span>|</span>
+            <input class="lang-btn" type="submit" name="ger" value="GER">
+            <span>|</span>
+            <input class="lang-btn" type="submit" name="slo" value="SLO">
+          </form>
+          
+        </div>
   </nav>

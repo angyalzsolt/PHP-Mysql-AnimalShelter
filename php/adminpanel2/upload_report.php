@@ -23,14 +23,14 @@ if (isset($_SESSION['userUid']))
             <label for="error1"><?php echo $languages[$x]["rep_name"] ?></label>
             <input type="text" id="error1" class="form-control" name="title" required>
             <div class="invalid-feedback">
-              Please provide a value.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="error2"><?php echo $languages[$x]["team_desc"] ?></label>
             <input type="text" id="error2" class="form-control" name="desc" required>
             <div class="invalid-feedback">
-              Please provide a value.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
@@ -38,17 +38,17 @@ if (isset($_SESSION['userUid']))
             <input type="date" id="error3" class="form-control" name="reports_date"
             required>
             <div class="invalid-feedback">
-              Please choose a value.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="error4"><?php echo $languages[$x]["rep_keywords"] ?></label>
             <input type="text" id="error4" class="form-control" name="keywords" required>
             <div class="invalid-feedback">
-              Please provide a value.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
-          <input class="btn btn-warning"" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_report" />
+          <input class="btn btn-warning" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_report" />
         </form>
   </div>
 </div>

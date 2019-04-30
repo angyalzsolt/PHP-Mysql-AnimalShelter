@@ -17,7 +17,7 @@ $result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
 <div class="break"></div>
 <div class="upper_part  justify-content-center align-items-center">
   <div class="conttainer">
-    <span class="mytext1">Welcome at </span>
+    <span class="mytext1"><?php echo $languages[$x]["WELCOME_AT"] ?> </span>
     <span class="mytext2">  </span>
   </div>
 </div>
@@ -55,7 +55,7 @@ $result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
           <form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="9NW8L34KBXKNG">
-            <button class="btn btn-success mt-3 donate">donate</button>
+            <button class="btn btn-success mt-3 donate"><?php echo $languages[$x]["donate"] ?></button>
           </form>
           
         </div>
@@ -69,7 +69,7 @@ $result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
  <div class="container">
    <div class="row">
     <div class="col-10 offset-1">
-      <h4 class="textt">Looking for a new home..</h4>
+      <h4 class="textt"><?php echo $languages[$x]["looking_for"] ?></h4>
     </div>
     <div class="col-10 offset-1 ">
       <div class="row justify-content-between">
@@ -101,25 +101,25 @@ $result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
        <div class="container">
          <div class="row">
           <div class="col-10 offset-1">
-            <h4 class="textt">Our Mission</h4>
+            <h4 class="textt"><?php echo $languages[$x]["our_mission"] ?></h4>
           </div>
           <div class="col-10 offset-1 ">
             <div class="row justify-content-between">
               
              <div class="col-lg-6 col-md-12 mb-4 smallbox" data-link='adoption.php'>
                <img class="smallpic" src="../img/photo-1489777404823-acccdc7d9994.jpg" alt="">
-               <a class="nocolor" href="adoption.php" ><div class="top-left"><span class="imgtext landing_link">How to adopt?</span></div></a>
+               <a class="nocolor" href="adoption.php" ><div class="top-left"><span class="imgtext landing_link"><?php echo $languages[$x]["how_adopt"] ?></span></div></a>
                <div class="bottomtext">
-                 <p class="landing_link"><a href="adoption.php" >About adopting..</a></p>
+                 <p class="landing_link"><a href="adoption.php" ><?php echo $languages[$x]["about_adopt"] ?></a></p>
                </div>
              </div>
              
              
              <div class="col-lg-6 col-md-12 mb-4 smallbox" data-link='support.php' >
                <img class="smallpic" src="../img/dog-1369362.jpg" alt="">
-               <a class="nocolor" href="support.php" ><div class="top-left"><span class="imgtext landing_link">Why support?</span></div></a>
+               <a class="nocolor" href="support.php" ><div class="top-left"><span class="imgtext landing_link"><?php echo $languages[$x]["why_support"] ?></span></div></a>
                <div class="bottomtext">
-                 <p class="landing_link"><a href="support.php" >More about support..</a></p>
+                 <p class="landing_link"><a href="support.php" ><?php echo $languages[$x]["about_support"] ?></a></p>
                </div>
              </div> 
 
@@ -142,7 +142,7 @@ $result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
             $resultt = mysqli_query($conn,"SELECT * FROM counter");
             while($row3 = mysqli_fetch_array($resultt))
             { echo $row3['numberr'];}?>" data-speed="3500"></h2>
-            <p class="count-text ">Visitors</p>
+            <p class="count-text "><?php echo $languages[$x]["visitors"] ?></p>
           </div>
         </div>
         
@@ -153,7 +153,7 @@ $result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
             $resultt2 = mysqli_query($conn,"SELECT * FROM dog ORDER BY dog_id DESC LIMIT 1");
             while($row4 = mysqli_fetch_array($resultt2))
             { echo $row4['dog_id']+8973;}?>" data-speed="3500"></h2>
-            <p class="count-text ">Saved Dogs</p>
+            <p class="count-text "><?php echo $languages[$x]["saved_dogs"] ?></p>
           </div></div>
           <div class="col-md-4 mb-4">
             <div class="counter">
@@ -162,7 +162,7 @@ $result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
               $resultt3 = mysqli_query($conn,"SELECT * FROM cat ORDER BY cat_id DESC LIMIT 1");
               while($row5 = mysqli_fetch_array($resultt3))
               { echo $row5['cat_id']+1082;}?>" data-speed="3500"></h2>
-              <p class="count-text ">Saved Cats</p>
+              <p class="count-text "><?php echo $languages[$x]["saved_cats"] ?></p>
             </div>
           </div>
         </div>

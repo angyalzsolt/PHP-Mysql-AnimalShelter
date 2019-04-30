@@ -31,21 +31,21 @@ if(isset($_GET['success'])){
             <label for="error1"><?php echo $languages[$x]["spon_name"] ?></label>
             <input type="text" id="error1" class="form-control" name="name" required>
             <div class="invalid-feedback">
-              Please provide a value.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="error2"><?php echo $languages[$x]["address"] ?></label>
             <input type="text" id="error2" class="form-control" name="address" required>
             <div class="invalid-feedback">
-              Please provide a value.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <div class="form-group">
             <label for="error3">URL</label>
             <input type="text" id="error3" class="form-control" name="email" required>
             <div class="invalid-feedback">
-              Please provide a value.
+              <?php echo $languages[$x]["provide_value"] ?>
             </div>
           </div>
           <input class="btn btn-warning" type="submit" value="<?php echo $languages[$x]["up_next_btn"] ?>" name="upload_sponsors" />
