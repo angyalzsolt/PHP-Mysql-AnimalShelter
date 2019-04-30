@@ -1,7 +1,7 @@
 .break {
 	height: 150px;
 }
-h3, p {
+h3, .mb-4 p {
 	text-align: center;
   padding: 1px!important;
   margin: 1px!important;

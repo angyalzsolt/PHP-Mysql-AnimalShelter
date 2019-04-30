@@ -33,7 +33,7 @@ if (isset($_GET['error'])) {
 				<h3><?php echo $languages[$x]["contact"] ?>:</h3>
 				<p><?php echo $languages[$x]["contact_sub"] ?></p>
 			</div>
-			<address>
+			<address class="mb-4">
 				<h3><?php echo $languages[$x]["an_home"] ?>:</h3>
 				<p><?php echo $languages[$x]["an_home_sub"] ?></p>
 			</address>
