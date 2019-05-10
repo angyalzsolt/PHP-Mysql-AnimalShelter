@@ -12,7 +12,7 @@ include("includes/upload_adopt.inc.php");
 <div class="container">
   <div class="row">
     <div class="col-10 offset-1">
-      <h1><?php echo $languages[$x]["dogs"] ?></h1> 
+      <h1><?php echo $languages[$x]["dogs_title"] ?></h1> 
       <hr>
     </div>
     <div class="col-10 offset-1">

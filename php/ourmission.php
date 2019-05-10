@@ -9,7 +9,7 @@ include("includes/dbh.inc.php");
 <div class="container">
 	<div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
 		<div class="col-md-6 px-0">
-			<h1 class="display-4 font-weight-bold">Our Mission</h1>
+			<h1 class="display-4 font-weight-bold"> <?php echo ucfirst(mb_strtolower($languages[$x]["OUR_MISSION"])) ?></h1>
 		</div>
 	</div>
 

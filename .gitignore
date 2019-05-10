@@ -1,2 +1,4 @@
 image_upload/
 pdf_upload/
+php/includes/dbh.inc.php
+php/adminpanel2/includes_admin/dbh.inc.php

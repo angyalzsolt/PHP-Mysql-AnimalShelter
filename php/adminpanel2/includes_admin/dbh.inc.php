@@ -3,6 +3,9 @@ $servername = "eva.codefactory.live";
 $username = "evacf_piestany";
 $password = "$!JjwYmD9M";
 $dbname = "evacf_piestany";
+
+
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection

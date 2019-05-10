@@ -42,7 +42,7 @@ include("includes/output_adopted.inc.php");
               </div>
               <div class="modal-body">
                 <p class="mb-0"><b><?php echo $languages[$x]["name"] ?>:</b> <?php echo $row["name"]; ?> <br></p>
-                <p class="mb-0"><b>Adopted on:</b> <?php $date2 = strtotime($row["post_date"]);
+                <p class="mb-0"><b><?php echo $languages[$x]["adopted_on"] ?>:</b> <?php $date2 = strtotime($row["post_date"]);
                echo $new_date = date('d. m. Y', $date2); ?> <br></p>
                 <p class="mb-0"><b><?php echo $languages[$x]["gender"] ?>:</b> <?php echo $row["gender"]; ?> <br></p>
                 <p class="mb-0"><b><?php echo $languages[$x]["breed"] ?>:</b> <?php echo $row["type"]; ?> <br></p>
@@ -78,7 +78,7 @@ include("includes/output_adopted.inc.php");
 		</div><!--col-10 ends-->
     
  <div class="col-10 offset-2 m-4 pl-4">
-        <button type="button" id="display" class="btn btn-success" >Filter</button>
+        <button type="button" id="display" class="btn btn-success" ><?php echo $languages[$x]["filter"] ?></button>
         <script>
             $("#display").click(function () {
                 $("#filtering").css("display", "block");
@@ -88,16 +88,16 @@ include("includes/output_adopted.inc.php");
 </div>
     <div id="filtering" class="col-10 offset-1">
       <hr>
-      <h4>Filter by name</h4>
+      <h4><?php echo $languages[$x]["filter_name"] ?></h4>
       <?php 
       for($i=ord('A'); $i<ord('Z'); $i++){
       ?>
        <a href="adopted.php?char=<?php echo chr($i) ?>" class="mb-1 btn btn-warning"><?php echo chr($i) ?></a>
      <?php }; ?>
-       <h4 class="mt-4">Filter by date of born</h4>
+       <h4 class="mt-4"><?php echo $languages[$x]["filter_date"] ?></h4>
        <form action="" method="get" >
          <div class="form-group">
-          <label >Select Month</label>
+          <label ><?php echo $languages[$x]["select_month"] ?></label>
           <select name="fmonth" class="form-control" >
             <?php 
               for($i=1; $i<13; $i++){
@@ -107,7 +107,7 @@ include("includes/output_adopted.inc.php");
           </select>
         </div>
         <div class="form-group">
-          <label >Select Year</label>
+          <label ><?php echo $languages[$x]["select_year"] ?></label>
           <select name="fyear" class="form-control" >
             <?php 
               for($i=2000; $i<2020; $i++){
@@ -116,9 +116,9 @@ include("includes/output_adopted.inc.php");
           <?php }; ?>
           </select>
         </div>
-        <input class="btn btn-warning" type="submit" value="Filter" name="filter_date" />
+        <input class="btn btn-warning" type="submit" value="<?php echo $languages[$x]["filter"] ?>" name="filter_date" />
        </form><br> 
-       <a href="adopted.php?nochar" class="mb-1 btn btn-warning">No filter</a>
+       <a href="adopted.php?nochar" class="mb-1 btn btn-warning"><?php echo $languages[$x]["no_filter"] ?></a>
     </div>
 
     

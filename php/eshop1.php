@@ -26,8 +26,9 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
 
       <!-- Page Heading -->
       <h1 class="my-4" style="margin-bottom: 0px!important">E-Shop</h1>
-      <hr>
+        
       <p><?php echo $languages[$x]["eshop_subtitle"] ?></p>
+      <hr>
       <h2><?php echo $languages[$x]["products"] ?></h2>
       <div class="row">
 

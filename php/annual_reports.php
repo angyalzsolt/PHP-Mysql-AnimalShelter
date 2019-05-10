@@ -13,7 +13,8 @@ $newarray = $result->fetch_all(MYSQLI_ASSOC);
 <div class="container">
 	<div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
 		<div class="col-md-6 px-0">
-			<h1 class="display-4 font-weight-bold"><?php echo ucfirst(mb_strtolower($languages[$x]["REPORTS"])) ?></h1>
+			<h1 class="display-4 font-weight-bold"><?php echo ucfirst(mb_strtolower($languages[$x]["REPORTS"])) ?></h1><br>
+			<a class="btn btn-primary btn-lg" href="reports.php" role="button"><?php echo $languages[$x]["back_to_all"] ?></a>
 		</div>
 	</div>
 </div>

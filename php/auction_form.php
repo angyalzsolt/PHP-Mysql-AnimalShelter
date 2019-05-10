@@ -91,13 +91,13 @@ if (empty($result)){
         <div class="col-md-4">
           <h3 class="my-3"><?php echo $row['name']; ?></h3>
           <p><?php echo $row['descr']; ?></p>
-          <h4 class="my-3">Details</h4>
+          <h4 class="my-3">Info</h4>
           <ul>
-          	<li>Highest Bid: <?php echo $row['bid_price']; ?>,- (from: <?php echo $row['nick_name']; ?>)</li>
-            <li>First price: <?php echo $row['price']; ?>,-</li>
-            <li>Condition: <?php echo $row['conditionn']; ?></li>
-            <li>Posted: <?php echo $row['post_date']; ?></li>
-            <li>End of auction: <?php echo $row['end_date']; ?></li>
+          	<li><?php echo $languages[$x]["highest_bid"] ?>: <?php echo $row['bid_price']; ?>,- (<?php echo $languages[$x]["from"] ?>: <?php echo $row['nick_name']; ?>)</li>
+            <li><?php echo $languages[$x]["first_price"] ?>: <?php echo $row['price']; ?>,-</li>
+            <li><?php echo $languages[$x]["condition"] ?>: <?php echo $row['conditionn']; ?></li>
+            <li><?php echo $languages[$x]["posted"] ?>: <?php echo $row['post_date']; ?></li>
+            <li><?php echo $languages[$x]["end_auction"] ?>: <?php echo $row['end_date']; ?></li>
           </ul>
         </div>
 <div class="col-md-12">
@@ -150,7 +150,7 @@ if (empty($result)){
             </div>
           </div>
           <div class="form-group">
-            <label for="validationCustom04"><?php echo $languages[$x]["address"] ?> <?php echo $languages[$x]["not_public"] ?>)</label>
+            <label for="validationCustom04"><?php echo $languages[$x]["address"] ?> (<?php echo $languages[$x]["not_public"] ?>)</label>
             <input type="text"  id="validationCustom04" class="form-control" name="address" required>
             <div class="invalid-feedback">
               <?php echo $languages[$x]["provide_value"] ?>

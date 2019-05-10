@@ -24,7 +24,7 @@ if (isset($_GET['error'])) {
 <div class="container">
 <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["contact_title"] ?></h1>
+          <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["contact_title"] ?>!</h1>
         </div>
       </div>
 	<div class="row">
@@ -52,12 +52,12 @@ if (isset($_GET['error'])) {
 			</div>
 			<div class="mb-4">
 				<h3><?php echo $languages[$x]["postal_address"] ?>: </h3>
-				<p>POBOX D - 111:</p>
-				<p>921 01 Piešťany, Slovakia</p>
+				<p>P.O.Box D - 111:</p>
+				<p>921 01 Piešťany</p>
 			</div>
 			<div class="mb-4">
 				<h3><?php echo $languages[$x]["account_title"] ?>:</h3>
-				<p><?php echo $languages[$x]["account_one"] ?>.</p>
+				<p><?php echo $languages[$x]["account_one"] ?></p>
 				<p><?php echo $languages[$x]["account_two"] ?></p>
 				<p><?php echo $languages[$x]["account_three"] ?></p>
 			</div>

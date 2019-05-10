@@ -10,7 +10,7 @@ include("includes/dbh.inc.php");
         <div class="col-md-6 px-0">
           <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["support_title"] ?></h1>
           <p class="lead my-3"><?php echo $languages[$x]["support_subtitle"] ?></p>
-          <p class="lead mb-0"><?php echo $languages[$x]["our_advice"] ?></p>
+         <!--  <p class="lead mb-0"><?php echo $languages[$x]["our_advice"] ?></p> -->
         </div>
       </div>
       <div class="row"> 

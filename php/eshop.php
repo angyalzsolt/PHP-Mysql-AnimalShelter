@@ -21,9 +21,11 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">E-Shop
-        <small><?php echo $languages[$x]["products"] ?></small>
-      </h1>
+      <h1 class="my-4" style="margin-bottom: 0px!important">E-Shop</h1>
+        
+      <p><?php echo $languages[$x]["eshop_subtitle"] ?></p>
+      <hr>
+      <h2><?php echo $languages[$x]["products"] ?></h2>
 
       <div class="row">
         <?php foreach($result as $row) { ?>
@@ -65,7 +67,7 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
                           </div>
                           <div class="form-group">
                             <label for="error1"><?php echo $languages[$x]["your_full_name"] ?></label>
-                            <input type="text" class="form-control" name="buy_name" placeholder="Your Name" id="error1" required>
+                            <input type="text" class="form-control" name="buy_name" placeholder="<?php echo $languages[$x]["ph_name"] ?>" id="error1" required>
                             <div class="invalid-feedback">
                             <?php echo $languages[$x]["provide_value"] ?>
                             </div>
@@ -79,14 +81,14 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
                           </div>
                           <div class="form-group">
                             <label for="error4"><?php echo $languages[$x]["address"] ?></label>
-                            <input type="text" class="form-control" name="buy_address" placeholder="City" id="error4" required>
+                            <input type="text" class="form-control" name="buy_address" placeholder="<?php echo $languages[$x]["ph_city"] ?>" id="error4" required>
                             <div class="invalid-feedback">
                             <?php echo $languages[$x]["provide_value"] ?>
                             </div>
                           </div>
                           <div class="form-group">
                             <label"><?php echo $languages[$x]["comment"] ?></label>
-                            <input type="text" class="form-control" name="buy_comment" placeholder="Street 23"  >
+                            <input type="text" class="form-control" name="buy_comment" placeholder="<?php echo $languages[$x]["ph_street"] ?>"  >
                            
                           </div>
                           <div class="form-group">

@@ -63,8 +63,8 @@ $row2 = $res->fetch_all(MYSQLI_ASSOC);
           <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["reports_title"] ?></h1><br>
           <a class="btn btn-success btn-lg" href="search_reports.php" role="button"><?php echo $languages[$x]["search"] ?></a>
           <a class="ml-3 btn btn-secondary btn-lg" href="annual_reports.php" role="button"><?php echo $languages[$x]["annual_reports"] ?></a> <br>
-          <a class="ml-3 mt-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/index.php?s=1&u=6&do=archive&lang" role="button"><?php echo $languages[$x]["archive_sk"] ?></a>
-          <a class="ml-3 mt-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/index.php?s=1&u=6&do=archive&lang=GER" role="button">Archive DE</a>
+          <a class="ml-3 mt-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/index.php?s=1&u=6&do=archive&lang" role="button"><?php echo $languages[$x]["reports_archive"] ?></a>
+          <!-- <a class="ml-3 mt-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/index.php?s=1&u=6&do=archive&lang=GER" role="button">Archive DE</a> -->
 
       </div>
   </div>
