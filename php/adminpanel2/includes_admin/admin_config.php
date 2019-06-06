@@ -201,7 +201,8 @@ $languages = array(
 		"provide_value" => "Provide value",
 		"evidence_id" => "Evidence ID",
 		"modal_title" => "Confirm",
-		"modal_question" => "Do you really want to delete this recod/dog/cat?"
+		"modal_question" => "Do you really want to delete this recod/dog/cat?",
+		"check_out" => "Check out"
 	),
 	"ger"=>array(
 		"dashboard"=> "Tisch"
@@ -338,7 +339,7 @@ $languages = array(
 		"admin_pass2"=> "Zopakuj heslo",
 		// supporters
 		"city"=> "Mesto",
-		"street"=> "Ullica",
+		"street"=> "Ulica",
 		"zip"=> "PSČ",
 		"req_date"=> "Dátum žiadosti",
 		"suppet" => "Podporené zviera",
@@ -388,7 +389,8 @@ $languages = array(
 		"provide_value" => "Pridaj hodnotu",
 		"evidence_id" => "Evidenč. ID",
 		"modal_title" => "Zmazať",
-		"modal_question" => "Naozaj cheš vymazať tento záznam? tohto psíka/mačku?"
+		"modal_question" => "Naozaj chceš vymazať tento záznam/psíka/mačku?",
+		"check_out" => "Skontrolovať"
 	)
 )
  ?>

@@ -1,5 +1,4 @@
 <?php setcookie('taxcookie', 'true', time() + 60*60*24  , "/");?>
-<?php setcookie('datenschutz_cookie', 'true', time() + 60*60  , "/");?>
 <?php   include("includes/front_config.php");  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,6 @@
   <link href="../css/header.css" rel="stylesheet">
   <link rel="shortcut icon" href="../img/logo4.png" />
   <style>
-  
 #logoreplace {  
   position: absolute!important;
 }
@@ -64,9 +62,8 @@
                    $('#element').popover('show');
                 });
               </script>";
-      
 
-if(!isset($_COOKIE['taxcookie']) || $_COOKIE['taxcookie'] !== 'true' && isset($_COOKIE['datenschutz_cookie'])) { 
+if(!isset($_COOKIE['taxcookie']) || $_COOKIE['taxcookie'] !== 'true') { 
   echo $tax;
   setcookie('taxcookie', 'true', time() + 60*60*24, "/");
  
@@ -75,11 +72,10 @@ if(!isset($_COOKIE['taxcookie']) || $_COOKIE['taxcookie'] !== 'true' && isset($_
                 <button style='margin-right: 0;' type='button' id='element' data-placement='top'  class='btn btn-success' rel='popover'
                         data-content='<a href=\"tax.php\">Please donate your 2% of tax to our organisation.</a>'
                         data-original-title='Give your 2%!'
-                        data-html='true'><a href='tax.php'>2% TAX</a>
+                        data-html='true'><a href='tax.php'>2% ".$languages[$x]["tax"]."</a>
                 </button>
               </div>";
 }
-
   ?>
      
     <div class="container">
@@ -153,44 +149,12 @@ if(!isset($_COOKIE['taxcookie']) || $_COOKIE['taxcookie'] !== 'true' && isset($_
     </div>
        <div class="lang-btn-group">
           <form method="post">
-            <input class="lang-btn" type="submit" name="slo" value="SLO">
+            <input class="lang-btn" type="submit" name="eng" value="ENG">
             <span>|</span>
             <input class="lang-btn" type="submit" name="ger" value="GER">
             <span>|</span>
-            <input class="lang-btn" type="submit" name="eng" value="ENG">
+            <input class="lang-btn" type="submit" name="slo" value="SLO">
           </form>
           
         </div>
   </nav>
-
-<?php
- $datenschutz = " <div id='dat-sch' class='modal fade' role='dialog'>
-                        <div class='modal-dialog modal-lg'>
-                          <div class='modal-content'>
-                            <div class='modal-header'>
-                              
-                              <h4 class='modal-title'>".$languages[$x]["privacy_policy"]."</h4>
-                            </div>
-                            <div class='modal-body text-center' >
-                            
-                              <p>".$languages[$x]["privacy_policy_text"]."</a>
-                            </div>
-                            <div class='modal-footer'>
-                              <button type='button' class='btn btn-default' data-dismiss='modal'>".$languages[$x]["accept"]."</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-              <script>
-              
-                $(window).load(function(){        
-                   $('#dat-sch').modal('show');
-                }); 
-
-              </script>";
-
-if(!isset($_COOKIE['datenschutz_cookie']) || $_COOKIE['datenschutz_cookie'] !== 'true') { 
-  echo $datenschutz;
-  setcookie('datenschutz_cookie', 'true', time() + 60*60, "/");
- 
-}  ?>

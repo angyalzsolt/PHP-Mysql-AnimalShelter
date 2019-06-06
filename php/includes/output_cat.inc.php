@@ -5,6 +5,7 @@ $sql1 = "SELECT * FROM cat
 		LEFT JOIN main_image_cat ON cat.cat_id = main_image_cat.fk_cat_id 
 		LEFT JOIN image_cat ON cat.cat_id = image_cat.fk_cat_id 
 		LEFT JOIN adaption ON cat.cat_id = adaption.fk_cat_id
+		LEFT JOIN supporter ON cat.cat_id = supporter.fk_cat_id
 		WHERE adaption.fk_cat_id IS NULL  AND cat.in_memoriam = 1";
 
 $result=mysqli_query($conn, $sql1);
@@ -21,6 +22,7 @@ while($row = mysqli_fetch_array($result)){
 	$data[$row['cat_id']]['gender'] = $row['gender'];
 	$data[$row['cat_id']]['cat_desc'] = $row['cat_desc'];
 	$data[$row['cat_id']]['cat_id'] = $row['cat_id'];
+	$data[$row['cat_id']]['supporter'] = $row['name'];
 	$data[$row['cat_id']]['images'][$row['image_cat']] = $row['image_cat'];
 };
 

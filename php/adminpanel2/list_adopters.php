@@ -26,8 +26,8 @@ if (isset($_SESSION['userUid']))
       <th>Email:</th>
       <th><?php echo $languages[$x]["other_pets"] ?>:</th>
       <th><?php echo $languages[$x]["kind_pets"] ?>:</th>
-      <th>Telephone Number 1:</th>
-      <th>Telephone Number 2:</th>
+      <th>Tel 1:</th>
+      <th>Tel 2:</th>
       <th><?php echo $languages[$x]["rep_date"] ?>:</th>
       <th><?php echo $languages[$x]["pet_id"] ?>:</th>
       <th><?php echo $languages[$x]["petev"] ?>:</th>

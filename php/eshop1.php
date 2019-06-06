@@ -46,9 +46,8 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
                 <button class="btn warningg btn-block" type="submit" name='id' value="cloth 35cm">35 cm</button>
                 <button class="btn warningg btn-block" type="submit" name='id' value="cloth 40cm">40 cm</button>
                 <button class="btn warningg btn-block" type="submit" name='id' value="cloth 45cm">45 cm</button>
-                <button class="btn warningg btn-block" type="submit" name='id' value="cloth 50cm">50 cm</button>
-                <button class="btn warningg btn-block" type="submit" name='id' value="cloth 55cm">55 cm</button>     
-                <button class="btn warningg btn-block" type="submit" name='id' value="cloth over 55cm"><?php echo $languages[$x]["over"] ?> 55 cm</button>
+                <button class="btn warningg btn-block" type="submit" name='id' value="cloth 50cm">50 cm</button>  
+                <button class="btn warningg btn-block" type="submit" name='id' value="cloth over 50cm"><?php echo $languages[$x]["over"] ?> 50 cm</button>
               </form>
             </div>
           </div>

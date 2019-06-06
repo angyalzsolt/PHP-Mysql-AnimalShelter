@@ -38,7 +38,7 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
                 <a><?php echo $row['name']; ?></a>
               </h4>
               <p class="card-text"><?php echo $languages[$x]["bid_price"] ?>: <?php echo $row['price']; ?> ,- </p>
-              <p class="card-text"><?php echo $languages[$x]["first_price"] ?>: <?php echo $row['price']; ?> ,- </p>
+<!--               <p class="card-text"><?php echo $languages[$x]["first_price"] ?>: <?php echo $row['price']; ?> ,- </p> -->
               <p class="card-text"><?php echo $languages[$x]["end_date"] ?>: <?php $date = strtotime($row['end_date']); echo $new_date = date('d. m. Y', $date); ?></p>
               <form id="single" action='auction_form.php' method='get' >
               <button class="btn warningg btn-block  mb-2" type="submit" name='id' value="<?php echo $row["auction_product_id"]; ?>"><?php echo $languages[$x]["make_bid"] ?></button>  

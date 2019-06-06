@@ -35,17 +35,17 @@ $results = mysqli_query($conn, "SELECT * FROM sponsors");
 		<table class="table bordered">
 	<thead>
 		<tr>
-			<th><?php echo $languages[$x]["address"] ?></th>
-			<th>URL</th>
 			<th><?php echo $languages[$x]["up_name"] ?></th>
+			<th>URL</th>
+			<th><?php echo $languages[$x]["address"] ?></th>
 		</tr>
 	</thead>
 	
 	<?php while ($row = mysqli_fetch_array($results)) { ?>
 		<tr>
-			<td><?php echo $row['sponsors_address']; ?></td>
-			<td><?php echo $row['sponsors_email']; ?></td>
 			<td><?php echo $row['sponsors_name']; ?></td>
+			<td><?php echo $row['sponsors_email']; ?></td>
+			<td><?php echo $row['sponsors_address']; ?></td>
 			<td>
 				<a href="edit_sponsors.php?edit=<?php echo $row['sponsors_id'] ?>" class="btn btn-info" ><?php echo $languages[$x]["up_edit_btn"] ?></a>
 			</td>

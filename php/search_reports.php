@@ -13,7 +13,7 @@ include("includes/output_reports.inc.php");
         <div class="col-md-6 px-0">
           <h1 class="display-4 font-weight-bold"><?php echo $languages[$x]["reports_title"] ?></h1><br>
           <a class="btn btn-primary btn-lg" href="reports.php" role="button"><?php echo $languages[$x]["back_to_all"] ?></a>
-          <a class="ml-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/files/vyr_sprava_2015_orig.pdf" role="button"><?php echo $languages[$x]["annual_reports"] ?></a>
+          <!-- <a class="ml-3 btn btn-warning btn-lg" href="http://www.utulok-piestany.sk/files/vyr_sprava_2015_orig.pdf" role="button"><?php echo $languages[$x]["annual_reports"] ?></a> -->
       </div>
   </div>
   <div class="row">

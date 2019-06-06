@@ -54,10 +54,7 @@
 <ul class="footer_ul2_amrc">
 <p><i class="fa fa-location-arrow"></i> <?php echo $languages[$x]["footer_row1"] ?></p>
 <p><i class="fa fa-phone"></i> <?php echo $languages[$x]["footer_row2"] ?></p>
-<p><i class="fa fa fa-envelope"></i> <?php echo $languages[$x]["footer_row4"] ?></p>
-<p><i class="fas fa-money-check"></i> <?php echo $languages[$x]["footer_row3"] ?></p>
-<br>
-<p><a href="privacy.php" style="color: black"><i class="fas fa-angle-right"></i> <?php echo $languages[$x]["privacy_policy"] ?></a></p>
+<p><i class="fa fa fa-envelope"></i> <?php echo $languages[$x]["footer_row3"] ?></p>
 </ul>
 <!--footer_ul2_amrc ends here-->
 </div>

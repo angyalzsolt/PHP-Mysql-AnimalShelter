@@ -37,7 +37,7 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
                 <a><?php echo $row['name']; ?></a>
               </h4>
               
-              <p class="card-text"><?php echo $languages[$x]["buy"] .': '. $row['description']; ?></p>
+              <p class="card-text"><?php echo $languages[$x]["description"] .': '. $row['description']; ?></p>
               <p class="card-text"><?php echo $languages[$x]["price"] .': '. $row['price']; ?> ,- </p>
               <p class="card-text"><?php echo $languages[$x]["quantity"] .': '. $row['quantityy']; ?></p>
               <p class="card-text"><?php echo $languages[$x]["condition"] .': '. $row['conditionn']; ?></p>
@@ -55,7 +55,7 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="buyModalLabel"><?php echo $languages[$x]["products"] .' '.$row["name"]; ?> for <?php echo $row["price"]; ?>,-</h5>
+                        <h5 class="modal-title" id="buyModalLabel"><?php echo $row["name"]; ?> for <?php echo $row["price"]; ?>,-</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -92,7 +92,7 @@ $result = $rows->fetch_all(MYSQLI_ASSOC);
                            
                           </div>
                           <div class="form-group">
-                            <label for="error6">Telephone</label>
+                            <label for="error6">Tel</label>
                             <input type="text" class="form-control" name="buy_tel" placeholder="01 234 567" id="error6" required>
                             <div class="invalid-feedback">
                             <?php echo $languages[$x]["provide_value"] ?>

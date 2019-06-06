@@ -4,6 +4,7 @@ $sql1 = "SELECT * FROM dog
 		 LEFT JOIN main_image_dog ON dog.dog_id = main_image_dog.fk_dog_id 
 		 LEFT JOIN image_dog ON dog.dog_id = image_dog.fk_dog_id 
 		 LEFT JOIN adaption ON dog.dog_id = adaption.fk_dog_id
+		 LEFT JOIN supporter ON dog.dog_id = supporter.fk_dog_id
 		 WHERE adaption.fk_dog_id IS NULL AND dog.in_memoriam = 1";
 
 $result=mysqli_query($conn, $sql1);
@@ -20,6 +21,7 @@ while($row = mysqli_fetch_array($result)){
 	$data[$row['dog_id']]['dog_desc'] = $row['dog_desc'];
 	$data[$row['dog_id']]['gender'] = $row['gender'];
 	$data[$row['dog_id']]['dog_id'] = $row['dog_id'];
+	$data[$row['dog_id']]['supporter'] = $row['name'];
 	$data[$row['dog_id']]['images'][$row["image_dog"]] = $row['image_dog'];
 };
 $j = json_encode($data);

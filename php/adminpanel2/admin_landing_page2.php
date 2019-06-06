@@ -38,7 +38,7 @@ if(isset($_GET['success'])){
         <h4><?php echo $languages[$x]["request4"]; ?></h4>
         <?php foreach ($rows as $row) {
          ?>
-        <p><?php  echo "<u>".$languages[$x]["request1"]."</u>".$row['name']; ?><a href='list_adopters.php'> Check out</a></p>  <?php } ?>
+        <p><?php  echo "<u>".$languages[$x]["request1"]."</u>".$row['name']; ?><a href='list_adopters.php'> <?php echo $languages[$x]["check_out"]; ?></a></p>  <?php } ?>
       </div>
       <?php } ;
 
@@ -47,7 +47,7 @@ if(isset($_GET['success'])){
         <h4><?php echo $languages[$x]["request4"]; ?></h4>
         <?php foreach ($rows2 as $row2) {
          ?>
-        <p><?php  echo "<u>".$languages[$x]["request2"]."</u>".$row2['name']; ?><a href='list_supporters.php'> Check out</a></p>  <?php } ?>
+        <p><?php  echo "<u>".$languages[$x]["request2"]."</u>".$row2['name']; ?><a href='list_supporters.php'> <?php echo $languages[$x]["check_out"]; ?></a></p>  <?php } ?>
       </div>
       <?php } ;
 
@@ -56,7 +56,7 @@ if(isset($_GET['success'])){
         <h4><?php echo $languages[$x]["request5"]; ?></h4>
         <?php foreach ($rows3 as $row3) {
          ?>
-        <p><?php  echo "<u>".$languages[$x]["request3"]."</u>".$row3['full_name']; ?><a href='list_eshop.php'> Check out</a></p>  <?php } ?>
+        <p><?php  echo "<u>".$languages[$x]["request3"]."</u>".$row3['full_name']; ?><a href='list_eshop.php'> <?php echo $languages[$x]["check_out"]; ?></a></p>  <?php } ?>
       </div>
       <?php } ;?>
       

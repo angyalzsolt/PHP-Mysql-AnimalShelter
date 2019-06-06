@@ -54,6 +54,7 @@ include("includes/upload_adopt.inc.php");
                 <p class="mb-0"><b><?php echo $languages[$x]["weight"] ?>:</b> <?php echo $row["weight"]; ?> <br></p>
                 <p class="pb-3"><b><?php echo $languages[$x]["castration"] ?>:</b> <?php echo $row["castration"]; ?> <br></p>
                 <p><b><?php echo $languages[$x]["description"] ?>:</b> <?php echo $row["cat_desc"]; ?> <br></p>
+                <p><b><?php echo $languages[$x]["supporter_name"] ?>:</b> <?php echo $row["supporter"] ?><br></p>
               </div>
               <div class="container">
                 <div class="row mx-2">
@@ -124,7 +125,7 @@ include("includes/upload_adopt.inc.php");
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="error6">Telephone</label>
+                            <label for="error6">Tel</label>
                             <input type="text" class="form-control" name="support_tel" placeholder="01 234 567" id="error6" required>
                             <div class="invalid-feedback">
                             <?php echo $languages[$x]["provide_value"] ?>
@@ -178,7 +179,7 @@ include("includes/upload_adopt.inc.php");
                           </div>
                           <div class="form-group">
                             <label  for="error2"><?php echo $languages[$x]["other_pets2"] ?></label>
-                            <input type="text" class="form-control" name="other2" placeholder="2 friendly cats" id="error2" required>
+                            <input type="text" class="form-control" name="other2" placeholder="2 friendly cats" id="error2">
                             <div class="invalid-feedback">
                             <?php echo $languages[$x]["provide_value"] ?>
                             </div>

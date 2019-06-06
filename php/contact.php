@@ -48,11 +48,11 @@ if (isset($_GET['error'])) {
 			</div>
 			<div class="mb-4">
 				<h3>E-mail:</h3>
-				<p>utulok@utulok-piestany.sk</p>
+				<a href="mailto:utulok@utulok-piestany.sk"><p class="contact_text">utulok@utulok-piestany.sk</p></a>
 			</div>
 			<div class="mb-4">
 				<h3><?php echo $languages[$x]["postal_address"] ?>: </h3>
-				<p>P.O.Box D - 111:</p>
+				<p>P.O.Box D - 111</p>
 				<p>921 01 Piešťany</p>
 			</div>
 			<div class="mb-4">
@@ -62,12 +62,8 @@ if (isset($_GET['error'])) {
 				<p><?php echo $languages[$x]["account_three"] ?></p>
 			</div>
 			<div class="mb-4">
-				<h3>IČO:</h3>
+				<h3><?php echo $languages[$x]["ico"] ?>:</h3>
 				<p>35628685</p>
-			</div>
-			<div class="mb-4">
-				<h3>E-mail:</h3>
-				<a href="mailto:utulok@utulok-piestany.sk"><p class="contact_text">utulok@utulok-piestany.sk</p></a>
 			</div>
 		</div>
 	</div>

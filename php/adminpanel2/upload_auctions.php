@@ -52,7 +52,7 @@ if (isset($_SESSION['userUid']))
             <label ><?php echo $languages[$x]["condition"] ?></label>
             <select name="condition" class="form-control">
               <option value="new"><?php echo $languages[$x]["new"] ?></option>
-              <option value="used"><?php echo $languages[$x]["used"] ?>d</option>
+              <option value="used"><?php echo $languages[$x]["used"] ?></option>
             </select>
           </div>
           <input class="btn btn-warning mt-4" type="submit" value="<?php echo $languages[$x]["up_load_btn"] ?>" name="upload_product" />

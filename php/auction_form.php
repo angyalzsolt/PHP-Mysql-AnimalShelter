@@ -96,8 +96,8 @@ if (empty($result)){
           	<li><?php echo $languages[$x]["highest_bid"] ?>: <?php echo $row['bid_price']; ?>,- (<?php echo $languages[$x]["from"] ?>: <?php echo $row['nick_name']; ?>)</li>
             <li><?php echo $languages[$x]["first_price"] ?>: <?php echo $row['price']; ?>,-</li>
             <li><?php echo $languages[$x]["condition"] ?>: <?php echo $row['conditionn']; ?></li>
-            <li><?php echo $languages[$x]["posted"] ?>: <?php echo $row['post_date']; ?></li>
-            <li><?php echo $languages[$x]["end_auction"] ?>: <?php echo $row['end_date']; ?></li>
+            <li><?php echo $languages[$x]["posted"] ?>: <?php $date = strtotime($row['post_date']); echo $new_date = date('d. m. Y', $date); ?></li>
+            <li><?php echo $languages[$x]["end_auction"] ?>: <?php $date = strtotime($row['end_date']); echo $new_date = date('d. m. Y', $date); ?></li>
           </ul>
         </div>
 <div class="col-md-12">
@@ -157,7 +157,7 @@ if (empty($result)){
             </div>
           </div>
           <div class="form-group">
-            <label for="validationCustom05">Telephone (<?php echo $languages[$x]["not_public"] ?>)</label>
+            <label for="validationCustom05">Tel (<?php echo $languages[$x]["not_public"] ?>)</label>
             <input type="text"  id="validationCustom05" class="form-control" name="tel" required>
             <div class="invalid-feedback">
               <?php echo $languages[$x]["provide_value"] ?>
